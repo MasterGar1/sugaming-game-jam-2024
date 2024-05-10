@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://6ipdexvy306t"]
+[gd_scene load_steps=3 format=3 uid="uid://6ipdexvy306t"]
 
 [ext_resource type="PackedScene" uid="uid://d3267n1v2qtf3" path="res://player/player.tscn" id="1_85fp7"]
+[ext_resource type="PackedScene" uid="uid://b7xmvgkex34yl" path="res://player/wrench.tscn" id="2_ifd21"]
 
 [node name="Room" type="Node2D"]
 y_sort_enabled = true
@@ -12,3 +13,6 @@ format = 2
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(0.3, 0.3)
+
+[node name="Wrench" parent="." instance=ExtResource("2_ifd21")]
+position = Vector2(302, -172)

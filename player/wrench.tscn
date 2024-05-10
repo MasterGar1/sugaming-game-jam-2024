@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://b7xmvgkex34yl"]
+
+[ext_resource type="Texture2D" uid="uid://dgd3wkffdf0jy" path="res://icon.svg" id="1_ib5qt"]
+[ext_resource type="Script" path="res://player/wrench.gd" id="1_ndki5"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_me7vj"]
+size = Vector2(25, 66.5)
+
+[node name="Wrench" type="Area2D"]
+script = ExtResource("1_ndki5")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(13, -30.5)
+scale = Vector2(0.1875, 0.523438)
+texture = ExtResource("1_ib5qt")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(13, -31)
+shape = SubResource("RectangleShape2D_me7vj")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
