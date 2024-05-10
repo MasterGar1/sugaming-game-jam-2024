@@ -11,3 +11,4 @@ y_sort_enabled = true
 format = 2
 
 [node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(0.3, 0.3)

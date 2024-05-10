@@ -13,10 +13,6 @@ enum {
 	MOVE, ATTACK, IDLE
 }
 
-func _process(delta):
-	#This will manage animations
-	pass
-
 func _physics_process(delta):
 	#State machine & Control logic
 	match state:
