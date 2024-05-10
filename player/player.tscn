@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=3 uid="uid://d3267n1v2qtf3"]
+
+[ext_resource type="Script" path="res://player/player.gd" id="1_ukkfh"]
+[ext_resource type="Texture2D" uid="uid://dgd3wkffdf0jy" path="res://icon.svg" id="2_f36bw"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_bgu0q"]
+radius = 11.0
+height = 72.0
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_3ijua"]
+
+[node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_ukkfh")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -46)
+texture = ExtResource("2_f36bw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+rotation = -1.5708
+shape = SubResource("CapsuleShape2D_bgu0q")
+
+[node name="AnimationTree" type="AnimationTree" parent="."]
+tree_root = SubResource("AnimationNodeStateMachine_3ijua")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
