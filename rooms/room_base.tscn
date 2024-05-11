@@ -1,9 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://6ipdexvy306t"]
+[gd_scene load_steps=2 format=3 uid="uid://6ipdexvy306t"]
 
 [ext_resource type="PackedScene" uid="uid://d3267n1v2qtf3" path="res://player/player.tscn" id="1_85fp7"]
-[ext_resource type="PackedScene" uid="uid://sp7alm62p0p4" path="res://props/interactable_base.tscn" id="2_dewq0"]
-[ext_resource type="PackedScene" uid="uid://mq4fa3bw3lve" path="res://player/wrench.tscn" id="2_ifd21"]
-[ext_resource type="PackedScene" uid="uid://c1y36c81o5fqa" path="res://enemy/possessed_prop.tscn" id="4_ea15j"]
 
 [node name="Room" type="Node2D"]
 y_sort_enabled = true
@@ -15,12 +12,3 @@ format = 2
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(0.3, 0.3)
-
-[node name="Wrench" parent="." instance=ExtResource("2_ifd21")]
-position = Vector2(302, -172)
-
-[node name="Interactable" parent="." instance=ExtResource("2_dewq0")]
-position = Vector2(-346, -78)
-
-[node name="PossessedProp" parent="." instance=ExtResource("4_ea15j")]
-position = Vector2(214, -5)

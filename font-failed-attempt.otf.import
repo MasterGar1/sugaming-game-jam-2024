@@ -3,12 +3,12 @@
 importer="font_data_dynamic"
 type="FontFile"
 uid="uid://dxx618d6hlhcu"
-path="res://.godot/imported/Failed Attempt.otf-0166fe64c8983f47082bc57f8c8a36ae.fontdata"
+path="res://.godot/imported/font-failed-attempt.otf-ae0a99bc23bdb3436ce806ced9b1714a.fontdata"
 
 [deps]
 
-source_file="res://Failed Attempt.otf"
-dest_files=["res://.godot/imported/Failed Attempt.otf-0166fe64c8983f47082bc57f8c8a36ae.fontdata"]
+source_file="res://font-failed-attempt.otf"
+dest_files=["res://.godot/imported/font-failed-attempt.otf-ae0a99bc23bdb3436ce806ced9b1714a.fontdata"]
 
 [params]
 

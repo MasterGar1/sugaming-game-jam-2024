@@ -55,9 +55,9 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_aplye")
 }],
-"loop": true,
-"name": &"new_animation",
-"speed": 5.0
+"loop": false,
+"name": &"attack",
+"speed": 10.0
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_3divo"]
@@ -65,14 +65,13 @@ height = 22.0
 
 [node name="Enemy" type="CharacterBody2D"]
 collision_layer = 8
-collision_mask = 2
+collision_mask = 7
 script = ExtResource("1_a0hdj")
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_xkhqx")
-animation = &"new_animation"
-frame_progress = 0.765898
+animation = &"attack"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_3divo")
