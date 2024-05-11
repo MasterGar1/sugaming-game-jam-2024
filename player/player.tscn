@@ -1,70 +1,101 @@
-[gd_scene load_steps=13 format=3 uid="uid://d3267n1v2qtf3"]
+[gd_scene load_steps=14 format=3 uid="uid://d3267n1v2qtf3"]
 
 [ext_resource type="Script" path="res://player/player.gd" id="1_ukkfh"]
-[ext_resource type="Texture2D" uid="uid://dgd3wkffdf0jy" path="res://icon.svg" id="2_f36bw"]
+[ext_resource type="Texture2D" uid="uid://cokls3mje7nj2" path="res://textures/player_idle..png" id="2_frr0j"]
+[ext_resource type="Texture2D" uid="uid://biospopj63m52" path="res://textures/player_movement.png" id="3_o4vyw"]
+[ext_resource type="PackedScene" uid="uid://1urkjifa64tn" path="res://utility/interaction_area.tscn" id="4_fbavn"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gkikc"]
+atlas = ExtResource("2_frr0j")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pt5xg"]
+atlas = ExtResource("2_frr0j")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4njq3"]
+atlas = ExtResource("3_o4vyw")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jd46h"]
+atlas = ExtResource("3_o4vyw")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yduqe"]
+atlas = ExtResource("3_o4vyw")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_np5qt"]
+atlas = ExtResource("3_o4vyw")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_cdk8h"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gkikc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pt5xg")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4njq3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jd46h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yduqe")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_np5qt")
+}],
+"loop": true,
+"name": &"Move",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ovne4"]
+radius = 18.0
+height = 58.0
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_bgu0q"]
-radius = 11.0
-height = 72.0
-
-[sub_resource type="Animation" id="Animation_5lq27"]
-resource_name = "idle"
-loop_mode = 1
-
-[sub_resource type="Animation" id="Animation_g1ilu"]
-resource_name = "move"
-loop_mode = 1
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_q5d4p"]
-_data = {
-"idle": SubResource("Animation_5lq27"),
-"move": SubResource("Animation_g1ilu")
-}
-
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_vu8w3"]
-animation = &"idle"
-
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_eiqrj"]
-animation = &"move"
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_fbh8o"]
-advance_mode = 2
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_pp5kg"]
-advance_mode = 2
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_ssxak"]
-switch_mode = 2
-advance_mode = 2
-
-[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_4pjvf"]
-states/idle/node = SubResource("AnimationNodeAnimation_vu8w3")
-states/idle/position = Vector2(419, 100)
-states/move/node = SubResource("AnimationNodeAnimation_eiqrj")
-states/move/position = Vector2(643, 100)
-transitions = ["Start", "idle", SubResource("AnimationNodeStateMachineTransition_fbh8o"), "idle", "move", SubResource("AnimationNodeStateMachineTransition_pp5kg"), "move", "idle", SubResource("AnimationNodeStateMachineTransition_ssxak")]
+radius = 9.0
+height = 26.0
 
 [node name="Player" type="CharacterBody2D"]
 collision_layer = 2
 script = ExtResource("1_ukkfh")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2_f36bw")
+[node name="Sprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -19)
+scale = Vector2(4, 4)
+sprite_frames = SubResource("SpriteFrames_cdk8h")
+animation = &"Move"
+autoplay = "Idle"
+frame_progress = 0.561444
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="Hurtbox" parent="." instance=ExtResource("4_fbavn")]
+collision_mask = 8
+
+[node name="CollisionShape2D" parent="Hurtbox" index="0"]
+position = Vector2(0, -18)
+shape = SubResource("CapsuleShape2D_ovne4")
+debug_color = Color(0.156987, 0.644785, 1.92523e-07, 0.42)
+
+[node name="Collision" type="CollisionShape2D" parent="."]
 rotation = -1.5708
 shape = SubResource("CapsuleShape2D_bgu0q")
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-root_node = NodePath("../AnimationTree")
-libraries = {
-"": SubResource("AnimationLibrary_q5d4p")
-}
-
-[node name="AnimationTree" type="AnimationTree" parent="."]
-root_node = NodePath(".")
-tree_root = SubResource("AnimationNodeStateMachine_4pjvf")
-anim_player = NodePath("../AnimationPlayer")
+debug_color = Color(0.816786, 0.405962, 1.92523e-07, 0.42)
 
 [node name="HoldPosition" type="Marker2D" parent="."]
-position = Vector2(62, -47)
+position = Vector2(0, -23)
+
+[connection signal="death" from="." to="." method="game_over"]
+
+[editable path="Hurtbox"]

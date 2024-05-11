@@ -4,21 +4,6 @@
 [ext_resource type="PackedScene" uid="uid://1urkjifa64tn" path="res://utility/interaction_area.tscn" id="2_2rj46"]
 [ext_resource type="Texture2D" uid="uid://dgd3wkffdf0jy" path="res://icon.svg" id="3_h32g6"]
 
-[sub_resource type="Animation" id="Animation_rvgh0"]
-resource_name = "door_slide"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(3.13834, 1),
-"update": 0,
-"values": [Vector2(0, -14), Vector2(0, 23)]
-}
-
 [sub_resource type="Animation" id="Animation_7o13u"]
 length = 0.001
 tracks/0/type = "value"
@@ -34,6 +19,21 @@ tracks/0/keys = {
 "values": [Vector2(0, -14)]
 }
 
+[sub_resource type="Animation" id="Animation_rvgh0"]
+resource_name = "door_slide"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(3.13834, 1),
+"update": 0,
+"values": [Vector2(0, -14), Vector2(0, 23)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_1bq6h"]
 _data = {
 "RESET": SubResource("Animation_7o13u"),
@@ -47,6 +47,7 @@ size = Vector2(20, 13)
 size = Vector2(28, 36)
 
 [node name="Door" type="StaticBody2D"]
+visible = false
 collision_mask = 2
 script = ExtResource("1_u00dr")
 

@@ -1,7 +1,7 @@
 extends Node2D
 
-@onready var area=$Area
-@export var room:PackedScene
+@onready var area = $Area
+@export var room : PackedScene
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.

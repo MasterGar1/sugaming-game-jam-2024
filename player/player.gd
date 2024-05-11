@@ -3,13 +3,12 @@ extends CharacterBody2D
 @export var SPEED : int = 300
 @export_range(0, 10) var health : int = 3
 
-@onready var animation_player = $AnimationPlayer
-@onready var animation_tree = $AnimationTree
-@onready var animation_state = animation_tree.get("parameters/playback")
-
 @onready var sprite = $Sprite2D
+@onready var hurtbox = $Hurtbox
 
 var state : int = MOVE
+
+var input_direction : Vector2 = Vector2.ZERO
 
 signal death()
 
@@ -18,26 +17,39 @@ enum {
 	MOVE, ATTACK, IDLE
 }
 
+func _ready():
+	sprite.play("Idle")
+
+func _process(delta):
+	if hurtbox.can_see_entity():
+		pass
+
 func _physics_process(delta):
 	#State machine & Control logic
+	input_direction = Input.get_vector("move_left", "move_right", "move_up", "move_down")
 	match state:
 		IDLE:
-			pass
+			if input_direction != Vector2.ZERO:
+				switch_state(MOVE)
 		MOVE:
 			move(delta)
 			
 		ATTACK:
-			attack()
-			pass
+			attack(delta)
 	
 func _unhandled_input(event):
-	if (event.is_action_pressed("attack") && has_wrench()):
+	if event.is_action_pressed("attack") && has_wrench():
 		state = ATTACK
 		
 #Movement
 func move(delta):
-	var input_direction : Vector2 = Input.get_vector("move_left", "move_right", "move_up", "move_down")
 	velocity = input_direction * SPEED * delta
+	
+	if input_direction == Vector2.ZERO:
+		switch_state(IDLE)
+		return
+	
+	sprite.flip_h = input_direction.x < 0 || input_direction.y > 0
 	
 	if has_wrench() && input_direction != Vector2.ZERO:
 		var hold_pos = find_child("HoldPosition")
@@ -47,6 +59,14 @@ func move(delta):
 		hold_pos.set_position(input_direction.normalized() * 40)
 	
 	move_and_collide(velocity)
+	
+func switch_state(st : int):
+	state = st
+	match state:
+		IDLE:
+			sprite.play("Idle")
+		MOVE:
+			sprite.play("Move")
 	
 func getHit():
 	health -= 1
@@ -60,7 +80,7 @@ func game_over():
 func has_wrench() -> bool:
 	return find_child("Wrench", true, false) != null
 
-func attack():
+func attack(delta):
 	var wrench = find_child("Wrench", true, false)
 	wrench.swing()
 	state = MOVE

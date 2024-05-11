@@ -27,6 +27,12 @@ window/size/window_width_override=960
 window/size/window_height_override=540
 window/stretch/mode="canvas_items"
 
+[file_customization]
+
+folder_colors={
+"res://enemy/": "purple"
+}
+
 [input]
 
 move_down={
@@ -67,9 +73,10 @@ attack={
 
 [layer_names]
 
-2d_render/layer_1="World"
-2d_render/layer_2="Player"
-2d_render/layer_3="Interactable"
+2d_physics/layer_1="World"
+2d_physics/layer_2="Player"
+2d_physics/layer_3="Props"
+2d_physics/layer_4="Enemy"
 
 [rendering]
 

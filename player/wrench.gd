@@ -12,6 +12,7 @@ func _process(delta):
 	pass
 
 func _on_body_entered(body):
+	
 	var hold_pos = body.find_child("HoldPosition")
 	
 	if hold_pos != null && hold_pos.get_children().size() == 0 && body is CharacterBody2D:
