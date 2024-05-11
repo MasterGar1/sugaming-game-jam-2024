@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://6ipdexvy306t"]
 
 [ext_resource type="PackedScene" uid="uid://d3267n1v2qtf3" path="res://player/player.tscn" id="1_85fp7"]
-[ext_resource type="PackedScene" uid="uid://b7xmvgkex34yl" path="res://player/wrench.tscn" id="2_ifd21"]
+[ext_resource type="PackedScene" uid="uid://mq4fa3bw3lve" path="res://player/wrench.tscn" id="2_ifd21"]
 
 [node name="Room" type="Node2D"]
 y_sort_enabled = true

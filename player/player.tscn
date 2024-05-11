@@ -14,6 +14,7 @@ script = ExtResource("1_ukkfh")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(0, -46)
+scale = Vector2(0.578125, 1)
 texture = ExtResource("2_f36bw")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -24,3 +25,6 @@ shape = SubResource("CapsuleShape2D_bgu0q")
 tree_root = SubResource("AnimationNodeStateMachine_3ijua")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+
+[node name="HoldPosition" type="Marker2D" parent="."]
+position = Vector2(38, -1)
