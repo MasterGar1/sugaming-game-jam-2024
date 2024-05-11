@@ -76,9 +76,9 @@ script = ExtResource("1_ukkfh")
 position = Vector2(0, -19)
 scale = Vector2(4, 4)
 sprite_frames = SubResource("SpriteFrames_cdk8h")
-animation = &"Move"
+animation = &"Idle"
 autoplay = "Idle"
-frame_progress = 0.561444
+frame_progress = 0.300492
 
 [node name="Hurtbox" parent="." instance=ExtResource("4_fbavn")]
 collision_mask = 8

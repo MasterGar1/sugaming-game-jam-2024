@@ -31,4 +31,9 @@ debug_color = Color(0.525368, 0.541932, 0.51718, 0.42)
 shape = SubResource("CapsuleShape2D_3divo")
 debug_color = Color(0.945379, 7.79718e-06, 0.592734, 0.42)
 
+[node name="AttackRotation" type="Marker2D" parent="."]
+
+[node name="Point" type="Marker2D" parent="AttackRotation"]
+position = Vector2(50, 0)
+
 [editable path="Area"]
