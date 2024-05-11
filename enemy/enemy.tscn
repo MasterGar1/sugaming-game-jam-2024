@@ -1,8 +1,7 @@
-[gd_scene load_steps=17 format=3 uid="uid://b7q4pp6eaugr8"]
+[gd_scene load_steps=12 format=3 uid="uid://b7q4pp6eaugr8"]
 
 [ext_resource type="Script" path="res://enemy/enemy.gd" id="1_a0hdj"]
 [ext_resource type="Texture2D" uid="uid://23cskm553gc3" path="res://textures/blobit.png" id="2_uj8gw"]
-[ext_resource type="PackedScene" uid="uid://1urkjifa64tn" path="res://utility/interaction_area.tscn" id="3_afiq8"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0f5qe"]
 atlas = ExtResource("2_uj8gw")
@@ -61,24 +60,8 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_3gyhp"]
-radius = 76.0263
-
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_3divo"]
 height = 22.0
-
-[sub_resource type="Animation" id="Animation_d6p8l"]
-length = 0.001
-
-[sub_resource type="Animation" id="Animation_qkcdd"]
-resource_name = "attack"
-length = 2.0
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_1oxi1"]
-_data = {
-"RESET": SubResource("Animation_d6p8l"),
-"attack": SubResource("Animation_qkcdd")
-}
 
 [node name="Enemy" type="CharacterBody2D"]
 collision_layer = 8
@@ -91,21 +74,6 @@ sprite_frames = SubResource("SpriteFrames_xkhqx")
 animation = &"new_animation"
 frame_progress = 0.765898
 
-[node name="Area" parent="." instance=ExtResource("3_afiq8")]
-
-[node name="CollisionShape2D" parent="Area" index="0"]
-shape = SubResource("CircleShape2D_3gyhp")
-debug_color = Color(0.525368, 0.541932, 0.51718, 0.42)
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_3divo")
 debug_color = Color(0.945379, 7.79718e-06, 0.592734, 0.42)
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-"": SubResource("AnimationLibrary_1oxi1")
-}
-
-[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_finished"]
-
-[editable path="Area"]
