@@ -15,7 +15,6 @@ func _on_body_entered(body):
 	
 	if hold_pos != null && hold_pos.get_children().size() == 0 && body is CharacterBody2D:
 		call_deferred("get_picked_up", hold_pos)
-		print("Picked up!")
 
 func get_picked_up(body) :
 	reparent(body)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://d3267n1v2qtf3"]
+[gd_scene load_steps=13 format=3 uid="uid://d3267n1v2qtf3"]
 
 [ext_resource type="Script" path="res://player/player.gd" id="1_ukkfh"]
 [ext_resource type="Texture2D" uid="uid://dgd3wkffdf0jy" path="res://icon.svg" id="2_f36bw"]
@@ -6,25 +6,64 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rweuu"]
 size = Vector2(100, 100)
 
-[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_3ijua"]
+[sub_resource type="Animation" id="Animation_5lq27"]
+resource_name = "idle"
+loop_mode = 1
+
+[sub_resource type="Animation" id="Animation_g1ilu"]
+resource_name = "move"
+loop_mode = 1
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_q5d4p"]
+_data = {
+"idle": SubResource("Animation_5lq27"),
+"move": SubResource("Animation_g1ilu")
+}
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_vu8w3"]
+animation = &"idle"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_eiqrj"]
+animation = &"move"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_fbh8o"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_pp5kg"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_ssxak"]
+switch_mode = 2
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_4pjvf"]
+states/idle/node = SubResource("AnimationNodeAnimation_vu8w3")
+states/idle/position = Vector2(419, 100)
+states/move/node = SubResource("AnimationNodeAnimation_eiqrj")
+states/move/position = Vector2(643, 100)
+transitions = ["Start", "idle", SubResource("AnimationNodeStateMachineTransition_fbh8o"), "idle", "move", SubResource("AnimationNodeStateMachineTransition_pp5kg"), "move", "idle", SubResource("AnimationNodeStateMachineTransition_ssxak")]
 
 [node name="Player" type="CharacterBody2D"]
 collision_layer = 2
 script = ExtResource("1_ukkfh")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(0, -46)
-scale = Vector2(0.59375, 1)
 texture = ExtResource("2_f36bw")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 rotation = -1.5708
 shape = SubResource("RectangleShape2D_rweuu")
 
-[node name="AnimationTree" type="AnimationTree" parent="."]
-tree_root = SubResource("AnimationNodeStateMachine_3ijua")
-
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+root_node = NodePath("../AnimationTree")
+libraries = {
+"": SubResource("AnimationLibrary_q5d4p")
+}
+
+[node name="AnimationTree" type="AnimationTree" parent="."]
+root_node = NodePath(".")
+tree_root = SubResource("AnimationNodeStateMachine_4pjvf")
+anim_player = NodePath("../AnimationPlayer")
 
 [node name="HoldPosition" type="Marker2D" parent="."]
 position = Vector2(62, -47)

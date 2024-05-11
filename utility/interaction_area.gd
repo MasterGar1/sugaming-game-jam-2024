@@ -9,9 +9,7 @@ func can_see_player():
 func _on_body_entered(body):
 	is_seen = true
 	player = body
-	print(player)
 
 func _on_body_exited(body):
 	is_seen = false
 	player = null
-	print(player)

@@ -11,6 +11,8 @@ extends CharacterBody2D
 
 var state : int = MOVE
 
+signal death()
+
 #States
 enum {
 	MOVE, ATTACK, IDLE
@@ -23,6 +25,7 @@ func _physics_process(delta):
 			pass
 		MOVE:
 			move(delta)
+			
 		ATTACK:
 			pass
 	
@@ -35,16 +38,12 @@ func move(delta):
 	if hold_pos != null && input_direction != Vector2.ZERO:
 		var offset = Vector2(0, -20)
 		hold_pos.look_at(position)
-		#hold_pos.set_rotatd
 		hold_pos.set_position(input_direction.normalized() * 40)
 	
 	move_and_collide(velocity)
 	
 func getHit():
-	--health
+	health -= 1
 	
 	if (health <= 0):
-		game_over()
-
-func game_over():
-	print("You died!")
+		death.emit()

@@ -1,11 +1,23 @@
-[gd_scene load_steps=3 format=3 uid="uid://sp7alm62p0p4"]
+[gd_scene load_steps=6 format=3 uid="uid://sp7alm62p0p4"]
 
+[ext_resource type="Script" path="res://props/interactable_base.gd" id="1_dqtkt"]
 [ext_resource type="Texture2D" uid="uid://dgd3wkffdf0jy" path="res://icon.svg" id="1_vonwf"]
+[ext_resource type="PackedScene" uid="uid://blj2wft0li0q" path="res://ui/canvas_base.tscn" id="2_f4pw5"]
 [ext_resource type="PackedScene" uid="uid://1urkjifa64tn" path="res://utility/interaction_area.tscn" id="2_hvr07"]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_tpvda"]
+radius = 146.342
+
 [node name="Interactable" type="Node2D"]
+script = ExtResource("1_dqtkt")
+interface = ExtResource("2_f4pw5")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_vonwf")
 
 [node name="Area2D" parent="." instance=ExtResource("2_hvr07")]
+
+[node name="CollisionShape2D" parent="Area2D" index="0"]
+shape = SubResource("CircleShape2D_tpvda")
+
+[editable path="Area2D"]
