@@ -53,10 +53,11 @@ func move(delta):
 	
 	if has_wrench() && input_direction != Vector2.ZERO:
 		var hold_pos = find_child("HoldPosition")
-		#var offset = Vector2(0, -20)
+		var offset = Vector2(0, -40)
 		#hold_pos.look_at(position)
 		#hold_pos.rotation = fmod(hold_pos.rotation, PI)
-		hold_pos.set_position(input_direction.normalized() * 40)
+		hold_pos.set_position(input_direction.normalized() * 30 + offset)
+		hold_pos.find_child("Sprite2D", true, false).flip_h = input_direction.x < 0 || input_direction.y < 0
 	
 	move_and_collide(velocity)
 	

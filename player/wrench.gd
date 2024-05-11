@@ -1,6 +1,7 @@
 extends Area2D
 
 @onready var animation_player = $AnimationPlayer
+@onready var sprite = $Sprite2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -23,4 +24,7 @@ func get_picked_up(body) :
 	position = Vector2.ZERO
 	
 func swing():
-	animation_player.play("swing")
+	if sprite.flip_h:
+		animation_player.play("swing_flipped")
+	else:
+		animation_player.play("swing")

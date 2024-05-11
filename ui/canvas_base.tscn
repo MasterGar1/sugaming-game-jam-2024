@@ -3,7 +3,6 @@
 [ext_resource type="Script" path="res://ui/canvas_base.gd" id="1_cq8yc"]
 
 [node name="Canvas" type="CanvasLayer"]
-process_mode = 2
 script = ExtResource("1_cq8yc")
 
 [node name="Button" type="Button" parent="."]

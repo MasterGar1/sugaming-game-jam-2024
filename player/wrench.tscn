@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://mq4fa3bw3lve"]
+[gd_scene load_steps=8 format=3 uid="uid://mq4fa3bw3lve"]
 
 [ext_resource type="Script" path="res://player/wrench.gd" id="1_ndki5"]
 [ext_resource type="Texture2D" uid="uid://cw0q67qsw45yu" path="res://textures/wrench.png" id="2_1w5od"]
@@ -47,16 +47,46 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0, 0.099, 0.201, 0.205),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
-"values": [Vector2(0, 0), Vector2(34, 36), Vector2(0, 71), Vector2(0, 0)]
+"values": [Vector2(0, 0), Vector2(6, 33), Vector2(-29, 41), Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_lx1jp"]
+resource_name = "swing_flipped"
+length = 0.205
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.205),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [0.0, -1.5708, -3.14159, 0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.205),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(-8, 33), Vector2(24, 38), Vector2(0, 0)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_2wop6"]
 _data = {
 "RESET": SubResource("Animation_yuipo"),
-"swing": SubResource("Animation_sh3kd")
+"swing": SubResource("Animation_sh3kd"),
+"swing_flipped": SubResource("Animation_lx1jp")
 }
 
 [node name="Wrench" type="Area2D"]
+position = Vector2(24, 38)
 collision_layer = 4
 collision_mask = 2
 monitorable = false

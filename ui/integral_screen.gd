@@ -16,12 +16,14 @@ func _process(delta):
 	pass
 
 func check_answer(answer):
+	print("asdf")
 	if (answers[integral_index] == answer):
 		print("Correct!")
 	else:
 		print("Nope!")
 
 func _on_button_0_button_up():
+	print("aaa")
 	check_answer(0)
 
 func _on_button_1_button_up():

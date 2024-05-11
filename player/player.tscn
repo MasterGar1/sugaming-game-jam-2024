@@ -76,9 +76,9 @@ script = ExtResource("1_ukkfh")
 position = Vector2(0, -19)
 scale = Vector2(4, 4)
 sprite_frames = SubResource("SpriteFrames_cdk8h")
-animation = &"Idle"
+animation = &"Move"
 autoplay = "Idle"
-frame_progress = 0.300492
+frame_progress = 0.561444
 
 [node name="Hurtbox" parent="." instance=ExtResource("4_fbavn")]
 collision_mask = 8
@@ -94,7 +94,7 @@ shape = SubResource("CapsuleShape2D_bgu0q")
 debug_color = Color(0.816786, 0.405962, 1.92523e-07, 0.42)
 
 [node name="HoldPosition" type="Marker2D" parent="."]
-position = Vector2(0, -23)
+position = Vector2(18, -24)
 
 [connection signal="death" from="." to="." method="game_over"]
 
