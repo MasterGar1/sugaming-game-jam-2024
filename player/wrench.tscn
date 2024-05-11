@@ -1,10 +1,52 @@
+<<<<<<< HEAD
 [gd_scene load_steps=4 format=3 uid="uid://cmdcf6cwkutr3"]
+=======
+[gd_scene load_steps=7 format=3 uid="uid://mq4fa3bw3lve"]
+>>>>>>> b07a292b39316079f30a92f4500f43326556237c
 
 [ext_resource type="Texture2D" uid="uid://dgd3wkffdf0jy" path="res://icon.svg" id="1_ib5qt"]
 [ext_resource type="Script" path="res://player/wrench.gd" id="1_ndki5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_me7vj"]
 size = Vector2(25, 66.5)
+
+[sub_resource type="Animation" id="Animation_sh3kd"]
+resource_name = "swing"
+length = 0.205
+step = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.099, 0.201, 0.205),
+"transitions": PackedFloat32Array(1, 1, 1, 1e-05),
+"update": 0,
+"values": [0.0, 1.5708, 3.14159, 0.0]
+}
+
+[sub_resource type="Animation" id="Animation_yuipo"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_2wop6"]
+_data = {
+"RESET": SubResource("Animation_yuipo"),
+"swing": SubResource("Animation_sh3kd")
+}
 
 [node name="Wrench" type="Area2D"]
 collision_layer = 4
@@ -18,5 +60,10 @@ texture = ExtResource("1_ib5qt")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_me7vj")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_2wop6")
+}
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

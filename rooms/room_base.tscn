@@ -16,7 +16,11 @@ format = 2
 zoom = Vector2(0.3, 0.3)
 
 [node name="Wrench" parent="." instance=ExtResource("2_ifd21")]
+<<<<<<< HEAD
 position = Vector2(302, -172)
 
 [node name="Interactable" parent="." instance=ExtResource("2_dewq0")]
 position = Vector2(-346, -78)
+=======
+position = Vector2(259, -76)
+>>>>>>> b07a292b39316079f30a92f4500f43326556237c
