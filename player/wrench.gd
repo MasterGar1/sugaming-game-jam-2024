@@ -3,17 +3,10 @@ extends Area2D
 @onready var animation_player = $AnimationPlayer
 @onready var sprite = $Sprite2D
 
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
+var sees_enemy : bool = false
+var enemy = null
 
 func _on_body_entered(body):
-	
 	var hold_pos = body.find_child("HoldPosition")
 	
 	if hold_pos != null && hold_pos.get_children().size() == 0 && body is CharacterBody2D:
@@ -28,3 +21,13 @@ func swing():
 		animation_player.play("swing_flipped")
 	else:
 		animation_player.play("swing")
+		
+
+func _on_body_shape_entered(body_rid, body, body_shape_index, local_shape_index):
+	sees_enemy = true
+	enemy = body
+
+
+func _on_body_shape_exited(body_rid, body, body_shape_index, local_shape_index):
+	sees_enemy = false
+	enemy = null

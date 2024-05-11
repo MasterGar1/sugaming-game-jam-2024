@@ -1,10 +1,11 @@
 extends CharacterBody2D
-
+class_name Player
 @export var SPEED : int = 300
 @export_range(0, 10) var health : int = 3
 
 @onready var sprite = $Sprite2D
 @onready var hurtbox = $Hurtbox
+@onready var wrench_holder = $HoldPosition
 
 var state : int = MOVE
 
@@ -21,8 +22,9 @@ func _ready():
 	sprite.play("Idle")
 
 func _process(delta):
-	if hurtbox.can_see_entity():
-		pass
+	if wrench_holder.get_child_count() > 0:
+		if wrench_holder.get_child(0).enemy is Enemy and state == ATTACK:
+			wrench_holder.get_child(0).enemy.die()
 
 func _physics_process(delta):
 	#State machine & Control logic
@@ -97,9 +99,9 @@ func switch_state(st : int):
 		MOVE:
 			sprite.play("Move")
 	
-func getHit():
+func get_hit():
 	health -= 1
-	
+	print("you got hit!")
 	if (health <= 0):
 		death.emit()
 

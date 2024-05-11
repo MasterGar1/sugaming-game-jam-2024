@@ -1,5 +1,5 @@
 extends CharacterBody2D
-
+class_name Enemy
 @onready var sprite = $Sprite2D
 
 enum {
@@ -15,3 +15,8 @@ func _process(delta):
 		var col = move_and_collide(velocity)
 		if col != null:
 			player_hit.emit()
+
+func die():
+	if state == ATTACK:
+		print("enemy died")
+		queue_free()

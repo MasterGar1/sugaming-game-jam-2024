@@ -34,7 +34,7 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id="Animation_e8abs"]
 resource_name = "attack"
-length = 0.8
+length = 0.6
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -42,8 +42,8 @@ tracks/0/path = NodePath("Path2D/PathFollow2D:progress_ratio")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.8),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0, 0.6),
+"transitions": PackedFloat32Array(4, 1),
 "update": 0,
 "values": [0.0, 1.0]
 }
@@ -84,9 +84,12 @@ shape = SubResource("RectangleShape2D_f3dlu")
 curve = SubResource("Curve2D_sade8")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
-rotation = -0.96007
+position = Vector2(85, 0)
+rotation = 0.269167
+progress = 92.4474
 
 [node name="Enemy" parent="Path2D/PathFollow2D" instance=ExtResource("2_k5ahp")]
+visible = false
 
 [node name="Area" parent="." instance=ExtResource("3_g86lm")]
 

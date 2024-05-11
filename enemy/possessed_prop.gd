@@ -10,6 +10,7 @@ var player = null
 func _process(delta):
 	if enemy != null:
 		if area.can_see_entity() and enemy.state == enemy.IDLE:
+			enemy.visible = true
 			player = area.entity
 			$CollisionShape2D.disabled = true
 			enemy.state = enemy.ATTACK
@@ -29,5 +30,5 @@ func _animation_finished(anim_name):
 			enemy.state = enemy.STATIC
 
 func _on_enemy_player_hit():
-	player.getHit()
-	enemy.queue_free()
+	player.get_hit()
+	enemy.die()
