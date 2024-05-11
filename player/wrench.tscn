@@ -33,10 +33,10 @@ tracks/0/path = NodePath(".:rotation")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.099, 0.201, 0.205),
+"times": PackedFloat32Array(0, 0.1, 0.201, 0.205),
 "transitions": PackedFloat32Array(1, 1, 1, 1e-05),
 "update": 0,
-"values": [0.0, 1.5708, 3.14159, 0.0]
+"values": [0.0, 1.56298, 3.14159, 0.0]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -45,10 +45,10 @@ tracks/1/path = NodePath(".:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.099, 0.201, 0.205),
+"times": PackedFloat32Array(0, 0.1, 0.201, 0.205),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
-"values": [Vector2(0, 0), Vector2(6, 33), Vector2(-29, 41), Vector2(0, 0)]
+"values": [Vector2(0, 0), Vector2(34, 30), Vector2(5, 64), Vector2(0, 0)]
 }
 
 [sub_resource type="Animation" id="Animation_lx1jp"]
@@ -76,7 +76,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0, 0.1, 0.2, 0.205),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
-"values": [Vector2(0, 0), Vector2(-8, 33), Vector2(24, 38), Vector2(0, 0)]
+"values": [Vector2(0, 0), Vector2(-30, 36), Vector2(3, 66), Vector2(0, 0)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_2wop6"]

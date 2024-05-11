@@ -24,7 +24,7 @@ func get_picked_up(body) :
 	position = Vector2.ZERO
 	
 func swing():
-	if sprite.flip_h:
+	if scale.x == -1:
 		animation_player.play("swing_flipped")
 	else:
 		animation_player.play("swing")
