@@ -15,7 +15,7 @@ signal death()
 
 #States
 enum {
-	MOVE, ATTACK, IDLE
+	MOVE = 1, ATTACK = 2, IDLE = 3
 }
 
 func _ready():
@@ -37,6 +37,7 @@ func _physics_process(delta):
 			move(delta)
 			
 		ATTACK:
+			move(delta)
 			attack(delta)
 	
 func _unhandled_input(event):
@@ -47,47 +48,46 @@ func _unhandled_input(event):
 func move(delta):
 	velocity = input_direction * SPEED * delta
 	
-	if input_direction == Vector2.ZERO:
+	if input_direction == Vector2.ZERO and state != ATTACK:
 		switch_state(IDLE)
 		return
 	
 	sprite.flip_h = input_direction.x < 0 || input_direction.y > 0
 	
 	if has_wrench() && input_direction != Vector2.ZERO:
-		var hold_pos = find_child("HoldPosition")
 		var offset = Vector2(0, -40)
 		var flip = false;
 		
 		if (input_direction.y < 0 && input_direction.x == 0):
 			flip = true
-			hold_pos.rotation = PI / 2
+			wrench_holder.rotation = PI / 2
 			offset = Vector2(30, -20)
 		elif (input_direction.y > 0 && input_direction.x == 0):
 			flip = true
-			hold_pos.rotation = -PI / 2
+			wrench_holder.rotation = -PI / 2
 			offset = Vector2(-30, -20)
 		elif (input_direction.y > 0 && input_direction.x > 0):
-			hold_pos.rotation = PI / 4
+			wrench_holder.rotation = PI / 4
 			offset = Vector2(20, -35)
 		elif (input_direction.y > 0 && input_direction.x < 0):
 			flip = true
-			hold_pos.rotation = -PI / 4
+			wrench_holder.rotation = -PI / 4
 			offset = Vector2(-20, -35)
 		elif (input_direction.y < 0 && input_direction.x > 0):
-			hold_pos.rotation = -PI / 4
+			wrench_holder.rotation = -PI / 4
 			offset = Vector2(-15, -40)
 		elif (input_direction.y < 0 && input_direction.x < 0):
 			flip = true
-			hold_pos.rotation = PI / 4
+			wrench_holder.rotation = PI / 4
 			offset = Vector2(15, -40)
 		else:
 			flip = input_direction.x < 0
-			hold_pos.rotation = 0
+			wrench_holder.rotation = 0
 			
-		hold_pos.set_position(input_direction.normalized() * 20 + offset)
+		wrench_holder.set_position(input_direction.normalized() * 20 + offset)
 		
 		
-		hold_pos.find_child("Wrench", true, false).scale.x = -1 if flip else 1
+		wrench_holder.find_child("Wrench", true, false).scale.x = -1 if flip else 1
 	
 	move_and_collide(velocity)
 	
@@ -106,7 +106,9 @@ func get_hit():
 		death.emit()
 
 func game_over():
-	print("You died!")
+	SceneManager.toggle_pause()
+	var game_over_screen : PackedScene = load("res://ui/game_over_screen.tscn")
+	get_tree().get_current_scene().add_child(game_over_screen.instantiate())
 	
 func has_wrench() -> bool:
 	return find_child("Wrench", true, false) != null
@@ -114,4 +116,3 @@ func has_wrench() -> bool:
 func attack(delta):
 	var wrench = find_child("Wrench", true, false)
 	wrench.swing()
-	state = MOVE

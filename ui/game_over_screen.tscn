@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=3 uid="uid://1t80kko7120f"]
+
+[ext_resource type="PackedScene" uid="uid://blj2wft0li0q" path="res://ui/canvas_base.tscn" id="1_8sd74"]
+[ext_resource type="Texture2D" uid="uid://cvye0o7ktbyh1" path="res://textures/game_over.png" id="2_n6xj4"]
+[ext_resource type="FontFile" uid="uid://chtgj4c1mrnvg" path="res://BLOODY.TTF" id="3_ar0o6"]
+
+[sub_resource type="Theme" id="Theme_cntea"]
+default_font = ExtResource("3_ar0o6")
+default_font_size = 50
+
+[node name="Canvas" instance=ExtResource("1_8sd74")]
+
+[node name="Button" parent="." index="0"]
+offset_left = 81.0
+offset_top = 244.0
+offset_right = 208.0
+offset_bottom = 275.0
+
+[node name="Background" type="TextureRect" parent="." index="1"]
+offset_right = 359.0
+offset_bottom = 202.0
+texture = ExtResource("2_n6xj4")
+expand_mode = 3
+
+[node name="GameOverText" type="Label" parent="." index="2"]
+offset_left = 59.0
+offset_top = 14.0
+offset_right = 317.0
+offset_bottom = 75.0
+theme = SubResource("Theme_cntea")
+theme_override_colors/font_color = Color(0.372549, 0, 0, 0.501961)
+text = "GAME OVER!"

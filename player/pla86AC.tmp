@@ -72,6 +72,7 @@ height = 26.0
 y_sort_enabled = true
 collision_layer = 2
 script = ExtResource("1_ukkfh")
+health = 1
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -19)
