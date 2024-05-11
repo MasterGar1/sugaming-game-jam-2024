@@ -1,0 +1,88 @@
+[gd_scene load_steps=3 format=3 uid="uid://1v16ibfgvkrn"]
+
+[ext_resource type="PackedScene" uid="uid://blj2wft0li0q" path="res://ui/canvas_base.tscn" id="1_c2g82"]
+[ext_resource type="Script" path="res://ui/integral_screen.gd" id="2_7db3h"]
+
+[node name="Canvas" instance=ExtResource("1_c2g82")]
+script = ExtResource("2_7db3h")
+answers = {
+1: 0,
+2: 8,
+3: 5,
+4: 0,
+5: 1,
+6: 7,
+7: 0
+}
+
+[node name="Button" parent="." index="0"]
+offset_left = 286.0
+offset_top = 14.0
+offset_right = 350.0
+offset_bottom = 45.0
+
+[node name="Buttons" type="GridContainer" parent="." index="1"]
+offset_left = 125.0
+offset_top = 120.0
+offset_right = 237.0
+offset_bottom = 193.0
+columns = 5
+
+[node name="Button0" type="Button" parent="Buttons" index="0"]
+layout_mode = 2
+text = "0"
+
+[node name="Button1" type="Button" parent="Buttons" index="1"]
+layout_mode = 2
+text = "1"
+
+[node name="Button2" type="Button" parent="Buttons" index="2"]
+layout_mode = 2
+text = "2"
+
+[node name="Button3" type="Button" parent="Buttons" index="3"]
+layout_mode = 2
+text = "3"
+
+[node name="Button4" type="Button" parent="Buttons" index="4"]
+layout_mode = 2
+text = "4"
+
+[node name="Button5" type="Button" parent="Buttons" index="5"]
+layout_mode = 2
+text = "5"
+
+[node name="Button6" type="Button" parent="Buttons" index="6"]
+layout_mode = 2
+text = "6"
+
+[node name="Button7" type="Button" parent="Buttons" index="7"]
+layout_mode = 2
+text = "7"
+
+[node name="Button8" type="Button" parent="Buttons" index="8"]
+layout_mode = 2
+text = "8"
+
+[node name="Button9" type="Button" parent="Buttons" index="9"]
+layout_mode = 2
+text = "9"
+
+[node name="Problem" type="TextureRect" parent="." index="2"]
+offset_left = 75.0
+offset_top = 17.0
+offset_right = 268.0
+offset_bottom = 109.0
+expand_mode = 3
+stretch_mode = 4
+
+[connection signal="button_up" from="Buttons/Button0" to="." method="_on_button_0_button_up"]
+[connection signal="button_up" from="Buttons/Button1" to="." method="_on_button_1_button_up"]
+[connection signal="button_up" from="Buttons/Button2" to="." method="_on_button_2_button_up"]
+[connection signal="button_up" from="Buttons/Button3" to="." method="_on_button_3_button_up"]
+[connection signal="button_up" from="Buttons/Button4" to="." method="_on_button_4_button_up"]
+[connection signal="button_up" from="Buttons/Button5" to="." method="_on_button_5_button_up"]
+[connection signal="button_up" from="Buttons/Button6" to="." method="_on_button_6_button_up"]
+[connection signal="button_up" from="Buttons/Button7" to="." method="_on_button_7_button_up"]
+[connection signal="button_up" from="Buttons/Button8" to="." method="_on_button_8_button_up"]
+[connection signal="button_up" from="Buttons/Button9" to="." method="_on_button_9_button_up"]

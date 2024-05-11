@@ -1,11 +1,11 @@
 [gd_scene load_steps=13 format=3 uid="uid://d3267n1v2qtf3"]
 
 [ext_resource type="Script" path="res://player/player.gd" id="1_ukkfh"]
-[ext_resource type="Texture2D" uid="uid://cokls3mje7nj2" path="res://textures/player_idle..png" id="2_frr0j"]
+[ext_resource type="Texture2D" uid="uid://dgd3wkffdf0jy" path="res://icon.svg" id="2_f36bw"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_bgu0q"]
-radius = 9.0
-height = 26.0
+radius = 11.0
+height = 72.0
 
 [sub_resource type="Animation" id="Animation_5lq27"]
 resource_name = "idle"
@@ -49,10 +49,7 @@ collision_layer = 2
 script = ExtResource("1_ukkfh")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(0, -19)
-scale = Vector2(3, 3)
-texture = ExtResource("2_frr0j")
-hframes = 2
+texture = ExtResource("2_f36bw")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 rotation = -1.5708
@@ -70,4 +67,4 @@ tree_root = SubResource("AnimationNodeStateMachine_4pjvf")
 anim_player = NodePath("../AnimationPlayer")
 
 [node name="HoldPosition" type="Marker2D" parent="."]
-position = Vector2(13, -18)
+position = Vector2(62, -47)
