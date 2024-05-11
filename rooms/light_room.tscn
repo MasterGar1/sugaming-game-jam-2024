@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://wrgudla24vtw"]
+
+[ext_resource type="PackedScene" uid="uid://6ipdexvy306t" path="res://rooms/room_base.tscn" id="1_e5p42"]
+[ext_resource type="PackedScene" uid="uid://dfkmxyiwyyncb" path="res://props/moveable_base.tscn" id="2_gottw"]
+
+[node name="Room" instance=ExtResource("1_e5p42")]
+
+[node name="Moveable" parent="." index="3" instance=ExtResource("2_gottw")]
+position = Vector2(-330, 71)
