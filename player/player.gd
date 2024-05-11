@@ -39,18 +39,11 @@ func move(delta):
 	var input_direction : Vector2 = Input.get_vector("move_left", "move_right", "move_up", "move_down")
 	velocity = input_direction * SPEED * delta
 	
-<<<<<<< HEAD
-	var hold_pos = find_child("HoldPosition")
-	if hold_pos != null && input_direction != Vector2.ZERO:
-		var offset = Vector2(0, -20)
-		hold_pos.look_at(position)
-=======
 	if has_wrench() && input_direction != Vector2.ZERO:
 		var hold_pos = find_child("HoldPosition")
 		#var offset = Vector2(0, -20)
 		#hold_pos.look_at(position)
 		#hold_pos.rotation = fmod(hold_pos.rotation, PI)
->>>>>>> b07a292b39316079f30a92f4500f43326556237c
 		hold_pos.set_position(input_direction.normalized() * 40)
 	
 	move_and_collide(velocity)
@@ -59,10 +52,7 @@ func getHit():
 	health -= 1
 	
 	if (health <= 0):
-<<<<<<< HEAD
 		death.emit()
-=======
-		game_over()
 
 func game_over():
 	print("You died!")
@@ -74,4 +64,3 @@ func attack():
 	var wrench = find_child("Wrench", true, false)
 	wrench.swing()
 	state = MOVE
->>>>>>> b07a292b39316079f30a92f4500f43326556237c

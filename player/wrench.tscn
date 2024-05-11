@@ -1,8 +1,4 @@
-<<<<<<< HEAD
-[gd_scene load_steps=4 format=3 uid="uid://cmdcf6cwkutr3"]
-=======
 [gd_scene load_steps=7 format=3 uid="uid://mq4fa3bw3lve"]
->>>>>>> b07a292b39316079f30a92f4500f43326556237c
 
 [ext_resource type="Texture2D" uid="uid://dgd3wkffdf0jy" path="res://icon.svg" id="1_ib5qt"]
 [ext_resource type="Script" path="res://player/wrench.gd" id="1_ndki5"]
