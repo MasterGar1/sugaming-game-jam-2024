@@ -1,6 +1,7 @@
 extends CharacterBody2D
 
 @export var SPEED : int = 300
+@export_range(0, 10) var health : int = 3
 
 @onready var animation_player = $AnimationPlayer
 @onready var animation_tree = $AnimationTree
@@ -38,3 +39,12 @@ func move(delta):
 		hold_pos.set_position(input_direction.normalized() * 40)
 	
 	move_and_collide(velocity)
+	
+func getHit():
+	--health
+	
+	if (health <= 0):
+		game_over()
+
+func game_over():
+	print("You died!")
