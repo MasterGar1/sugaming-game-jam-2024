@@ -1,10 +1,23 @@
-[gd_scene load_steps=2 format=3 uid="uid://dfkmxyiwyyncb"]
+[gd_scene load_steps=5 format=3 uid="uid://dfkmxyiwyyncb"]
 
+[ext_resource type="Script" path="res://props/moveable_base.gd" id="1_572uc"]
 [ext_resource type="Texture2D" uid="uid://dgd3wkffdf0jy" path="res://icon.svg" id="1_c4u40"]
 
-[node name="Moveable" type="RigidBody2D"]
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_fruum"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1p1gg"]
+size = Vector2(122, 123)
+
+[node name="Moveable" type="RigidBody2D"]
+collision_layer = 4
+collision_mask = 2
+physics_material_override = SubResource("PhysicsMaterial_fruum")
+gravity_scale = 0.0
+script = ExtResource("1_572uc")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_c4u40")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_1p1gg")

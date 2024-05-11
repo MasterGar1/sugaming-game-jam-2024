@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://baurdv6k08ykh"]
+
+[ext_resource type="Texture2D" uid="uid://d4mkyh8ou1lo8" path="res://textures/2d_light.png" id="1_3q4bd"]
+[ext_resource type="PackedScene" uid="uid://d3267n1v2qtf3" path="res://player/player.tscn" id="2_0my8w"]
+
+[node name="Light" type="PointLight2D"]
+position = Vector2(-2, -10)
+color = Color(1, 0.72549, 0.301961, 1)
+texture = ExtResource("1_3q4bd")
+texture_scale = 2.0
+
+[node name="Player" parent="." instance=ExtResource("2_0my8w")]
+position = Vector2(-116, 35)
