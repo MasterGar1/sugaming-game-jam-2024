@@ -3,8 +3,9 @@
 [ext_resource type="Script" path="res://player/wrench.gd" id="1_ndki5"]
 [ext_resource type="Texture2D" uid="uid://cw0q67qsw45yu" path="res://textures/wrench.png" id="2_1w5od"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_me7vj"]
-size = Vector2(36, 54)
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_qvi2b"]
+radius = 12.5
+height = 61.0
 
 [sub_resource type="Animation" id="Animation_yuipo"]
 length = 0.001
@@ -86,20 +87,18 @@ _data = {
 }
 
 [node name="Wrench" type="Area2D"]
-position = Vector2(24, 38)
 collision_layer = 4
 collision_mask = 2
 monitorable = false
 script = ExtResource("1_ndki5")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(0, 1)
-scale = Vector2(1.875, 2.5)
+rotation = -0.785398
+scale = Vector2(3, 3)
 texture = ExtResource("2_1w5od")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(1, 1)
-shape = SubResource("RectangleShape2D_me7vj")
+shape = SubResource("CapsuleShape2D_qvi2b")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
