@@ -21,8 +21,8 @@ SceneManager="*res://utility/scene_manager.gd"
 
 [display]
 
-window/size/viewport_width=480
-window/size/viewport_height=270
+window/size/viewport_width=360
+window/size/viewport_height=202
 window/size/window_width_override=960
 window/size/window_height_override=540
 window/stretch/mode="canvas_items"
@@ -70,3 +70,7 @@ attack={
 2d_render/layer_1="World"
 2d_render/layer_2="Player"
 2d_render/layer_3="Interactable"
+
+[rendering]
+
+textures/canvas_textures/default_texture_filter=0

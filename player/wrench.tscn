@@ -6,6 +6,21 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_me7vj"]
 size = Vector2(25, 66.5)
 
+[sub_resource type="Animation" id="Animation_yuipo"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
 [sub_resource type="Animation" id="Animation_sh3kd"]
 resource_name = "swing"
 length = 0.205
@@ -21,21 +36,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1e-05),
 "update": 0,
 "values": [0.0, 1.5708, 3.14159, 0.0]
-}
-
-[sub_resource type="Animation" id="Animation_yuipo"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:rotation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.0]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_2wop6"]
