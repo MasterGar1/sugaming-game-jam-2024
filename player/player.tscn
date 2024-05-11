@@ -45,6 +45,7 @@ states/move/position = Vector2(643, 100)
 transitions = ["Start", "idle", SubResource("AnimationNodeStateMachineTransition_fbh8o"), "idle", "move", SubResource("AnimationNodeStateMachineTransition_pp5kg"), "move", "idle", SubResource("AnimationNodeStateMachineTransition_ssxak")]
 
 [node name="Player" type="CharacterBody2D"]
+collision_layer = 2
 script = ExtResource("1_ukkfh")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
