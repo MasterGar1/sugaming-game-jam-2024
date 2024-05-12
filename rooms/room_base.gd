@@ -5,7 +5,6 @@ var is_completed : bool = false
 @export var unlockable_door : Node
 @onready var camera = $Camera2D
 @export var is_current : bool = false
-@onready var blocker = $Blocker
 
 func _ready():
 	camera.enabled = is_current
@@ -14,7 +13,7 @@ func _ready():
 
 func complete(index):
 	is_completed = true
-	unlockable_door.unlock()
+	unlockable_door.unlock(0)
 	
 func transition_to(what):
 	is_current = false

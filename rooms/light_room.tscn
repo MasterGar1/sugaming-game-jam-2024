@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://wrgudla24vtw"]
+[gd_scene load_steps=18 format=3 uid="uid://wrgudla24vtw"]
 
 [ext_resource type="PackedScene" uid="uid://cdqcaau7ji17p" path="res://rooms/room_base.tscn" id="1_e5p42"]
 [ext_resource type="Texture2D" uid="uid://cjfx0igeqvgxd" path="res://textures/tiles.png" id="2_g2mjf"]
@@ -12,6 +12,8 @@
 [ext_resource type="Texture2D" uid="uid://cw0q67qsw45yu" path="res://textures/wrench.png" id="10_cpq68"]
 [ext_resource type="Texture2D" uid="uid://g4dh0130ifob" path="res://textures/gun.png" id="11_wdos2"]
 [ext_resource type="Texture2D" uid="uid://cpn3sla3yfshd" path="res://textures/blob_fall.png" id="12_30m8g"]
+[ext_resource type="PackedScene" uid="uid://sp7alm62p0p4" path="res://props/interactable_base.tscn" id="13_shbd2"]
+[ext_resource type="Script" path="res://props/sus_glob.gd" id="14_4735w"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_s4ptt"]
 texture = ExtResource("2_g2mjf")
@@ -49,8 +51,12 @@ texture = ExtResource("2_g2mjf")
 [sub_resource type="TileSet" id="TileSet_4fde6"]
 sources/0 = SubResource("TileSetAtlasSource_s4ptt")
 
-[node name="Room2" instance=ExtResource("1_e5p42")]
+[sub_resource type="CircleShape2D" id="CircleShape2D_c88ys"]
+radius = 35.6931
+
+[node name="Room2" node_paths=PackedStringArray("unlockable_door") instance=ExtResource("1_e5p42")]
 room_id = 2
+unlockable_door = NodePath("Door")
 
 [node name="TileMap" parent="." index="0"]
 tile_set = SubResource("TileSet_4fde6")
@@ -60,7 +66,12 @@ layer_0/tile_data = PackedInt32Array(-65528, 0, 0, -327676, 0, 0, -393212, 0, 0,
 layer_0/tile_data = PackedInt32Array(-589833, 65536, 1, -655355, 65536, 1, -589826, 65536, 1, -458756, 327680, 0, -458757, 262144, 0, -458758, 196608, 0, 9, 131072, 0, 393222, 131072, 1, 589821, 131072, 0, 589815, 0, 0, 393205, 0, 0, 196598, 0, 0, -65542, 0, 0, -2, 0, 0, 131066, 0, 0, 458755, 131072, 1, -327675, 131072, 1, 12, 131072, 1, 393227, 131072, 1)
 
 [node name="Door" parent="." index="3" instance=ExtResource("3_43urx")]
-position = Vector2(-539, -4)
+position = Vector2(-558, -4)
+rotation = -1.57079
+
+[node name="Sprite2D" parent="Door" index="1"]
+rotation = 1.5708
+scale = Vector2(2.48536, 4.48906)
 
 [node name="Light" parent="." index="4" instance=ExtResource("4_qay73")]
 position = Vector2(-73, -229)
@@ -140,6 +151,20 @@ position = Vector2(302, 147)
 [node name="Sprite2D" parent="PossessedProp8" index="0"]
 texture = ExtResource("12_30m8g")
 
+[node name="SusGlob" parent="." index="18" instance=ExtResource("13_shbd2")]
+position = Vector2(-133, -2)
+script = ExtResource("14_4735w")
+interface = null
+
+[node name="Sprite2D" parent="SusGlob" index="0"]
+scale = Vector2(2, 2)
+texture = ExtResource("12_30m8g")
+
+[node name="CollisionShape2D" parent="SusGlob/Area2D" index="0"]
+shape = SubResource("CircleShape2D_c88ys")
+
+[editable path="Door"]
+[editable path="Door/Area"]
 [editable path="PossessedProp"]
 [editable path="PossessedProp/Area"]
 [editable path="PossessedProp2"]
@@ -156,3 +181,5 @@ texture = ExtResource("12_30m8g")
 [editable path="PossessedProp7/Area"]
 [editable path="PossessedProp8"]
 [editable path="PossessedProp8/Area"]
+[editable path="SusGlob"]
+[editable path="SusGlob/Area2D"]

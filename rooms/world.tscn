@@ -13,9 +13,15 @@
 position = Vector2(-526.332, -278.998)
 is_current = true
 
+[node name="Camera2D" parent="Start" index="4"]
+enabled = true
+
 [node name="Chest" parent="." instance=ExtResource("3_rpxgm")]
 y_sort_enabled = true
 position = Vector2(690, -342)
+
+[node name="Camera2D" parent="Chest" index="2"]
+enabled = true
 
 [node name="Light" parent="." instance=ExtResource("1_43rkd")]
 y_sort_enabled = true
@@ -29,3 +35,36 @@ position = Vector2(-557, 363)
 position = Vector2(-986, -422)
 
 [node name="Overlay" parent="Player" instance=ExtResource("5_ycald")]
+
+[editable path="Start"]
+[editable path="Start/Door"]
+[editable path="Start/Door/Area"]
+[editable path="Chest"]
+[editable path="Chest/PossessedProp"]
+[editable path="Chest/PossessedProp/Area"]
+[editable path="Chest/Moveable"]
+[editable path="Chest/Moveable2"]
+[editable path="Chest/Moveable3"]
+[editable path="Chest/Door"]
+[editable path="Chest/Door/Area"]
+[editable path="Chest/Moveable4"]
+[editable path="Light"]
+[editable path="Light/PossessedProp"]
+[editable path="Light/PossessedProp/Area"]
+[editable path="Light/PossessedProp2"]
+[editable path="Light/PossessedProp2/Area"]
+[editable path="Light/PossessedProp3"]
+[editable path="Light/PossessedProp3/Area"]
+[editable path="Light/PossessedProp4"]
+[editable path="Light/PossessedProp4/Area"]
+[editable path="Light/PossessedProp5"]
+[editable path="Light/PossessedProp5/Area"]
+[editable path="Light/PossessedProp6"]
+[editable path="Light/PossessedProp6/Area"]
+[editable path="Light/PossessedProp7"]
+[editable path="Light/PossessedProp7/Area"]
+[editable path="Light/PossessedProp8"]
+[editable path="Light/PossessedProp8/Area"]
+[editable path="Generator"]
+[editable path="Generator/Door"]
+[editable path="Generator/Door/Area"]

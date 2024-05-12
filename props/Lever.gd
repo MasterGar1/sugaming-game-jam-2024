@@ -28,4 +28,4 @@ func _process(delta):
 			sprite.texture=ResourceLoader.load("res://textures/red_lever.png")
 			area.entity.get_hit()
 		if levs[0]==true and levs[1]==true and levs[2]==true:
-			SceneManager.completed.emit(get_parent().room_id)
+			get_tree().get_current_scene().find_child("Chest").complete(1)
