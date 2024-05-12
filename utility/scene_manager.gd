@@ -1,11 +1,10 @@
 extends Node
 
-var boolHasUnlocked : bool = false
+@onready var timer = preload("res://utility/end_timer.tscn")
 
 signal completed(index)
 signal switch_room(to_what)
 signal timer_start()
-@onready var timer = preload("res://utility/end_timer.tscn")
 
 func toggle_pause():
 	get_tree().paused = not get_tree().paused
