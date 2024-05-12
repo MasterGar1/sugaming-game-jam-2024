@@ -1,7 +1,6 @@
-[gd_scene load_steps=9 format=3 uid="uid://cqb88s4wunyw7"]
+[gd_scene load_steps=7 format=3 uid="uid://cqb88s4wunyw7"]
 
 [ext_resource type="Script" path="res://props/door.gd" id="1_u00dr"]
-[ext_resource type="PackedScene" uid="uid://1urkjifa64tn" path="res://utility/interaction_area.tscn" id="2_2rj46"]
 [ext_resource type="Texture2D" uid="uid://dgd3wkffdf0jy" path="res://icon.svg" id="3_h32g6"]
 
 [sub_resource type="Animation" id="Animation_7o13u"]
@@ -18,6 +17,18 @@ tracks/0/keys = {
 "update": 0,
 "values": [Vector2(0, -14)]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../CollisionShape2D:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
 
 [sub_resource type="Animation" id="Animation_rvgh0"]
 resource_name = "door_slide"
@@ -33,6 +44,18 @@ tracks/0/keys = {
 "update": 0,
 "values": [Vector2(0, -14), Vector2(0, 23)]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../CollisionShape2D:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(1),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_1bq6h"]
 _data = {
@@ -40,14 +63,10 @@ _data = {
 "door_slide": SubResource("Animation_rvgh0")
 }
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_s5xbl"]
-size = Vector2(20, 13)
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ck4cd"]
 size = Vector2(28, 36)
 
 [node name="Door" type="StaticBody2D"]
-visible = false
 collision_mask = 2
 script = ExtResource("1_u00dr")
 
@@ -62,14 +81,7 @@ libraries = {
 "": SubResource("AnimationLibrary_1bq6h")
 }
 
-[node name="Area" parent="." instance=ExtResource("2_2rj46")]
-
-[node name="CollisionShape2D" parent="Area" index="0"]
-position = Vector2(-14, -2.5)
-shape = SubResource("RectangleShape2D_s5xbl")
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -14)
 shape = SubResource("RectangleShape2D_ck4cd")
-
-[editable path="Area"]
+disabled = true

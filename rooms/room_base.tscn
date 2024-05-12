@@ -1,9 +1,16 @@
-[gd_scene load_steps=2 format=3 uid="uid://6ipdexvy306t"]
+[gd_scene load_steps=5 format=3 uid="uid://6ipdexvy306t"]
 
+[ext_resource type="Script" path="res://rooms/room_base.gd" id="1_1p8gf"]
 [ext_resource type="PackedScene" uid="uid://d3267n1v2qtf3" path="res://player/player.tscn" id="1_85fp7"]
+[ext_resource type="Shader" path="res://ui/overlay.gdshader" id="1_tnayq"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_1gwp3"]
+shader = ExtResource("1_tnayq")
 
 [node name="Room" type="Node2D"]
 y_sort_enabled = true
+material = SubResource("ShaderMaterial_1gwp3")
+script = ExtResource("1_1p8gf")
 
 [node name="Player" parent="." instance=ExtResource("1_85fp7")]
 

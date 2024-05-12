@@ -7,6 +7,15 @@
 [node name="Overlay" type="CanvasLayer"]
 script = ExtResource("1_rj4tw")
 
+[node name="Shader" type="ColorRect" parent="."]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0.117647, 0.160784, 0.411765)
+
 [node name="HBox" type="HBoxContainer" parent="."]
 offset_left = 5.0
 offset_top = 4.0
