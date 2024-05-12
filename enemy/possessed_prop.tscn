@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://1urkjifa64tn" path="res://utility/interaction_area.tscn" id="3_g86lm"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_f3dlu"]
-size = Vector2(94, 98)
+size = Vector2(68, 80)
 
 [sub_resource type="Curve2D" id="Curve2D_sade8"]
 _data = {
