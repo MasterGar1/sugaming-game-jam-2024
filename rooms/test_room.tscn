@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://dt2a1g8ogm8ah"]
 
-[ext_resource type="PackedScene" uid="uid://6ipdexvy306t" path="res://rooms/room_base.tscn" id="1_tkqbq"]
+[ext_resource type="PackedScene" uid="uid://cdqcaau7ji17p" path="res://rooms/room_base.tscn" id="1_tkqbq"]
 [ext_resource type="PackedScene" uid="uid://c1y36c81o5fqa" path="res://enemy/possessed_prop.tscn" id="2_7beop"]
 [ext_resource type="PackedScene" uid="uid://mq4fa3bw3lve" path="res://player/wrench.tscn" id="3_43rpp"]
 [ext_resource type="PackedScene" uid="uid://d0aux3vcernsy" path="res://props/note.tscn" id="4_ix7vt"]
