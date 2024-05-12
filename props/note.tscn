@@ -1,12 +1,23 @@
-[gd_scene load_steps=4 format=3 uid="uid://d0aux3vcernsy"]
+[gd_scene load_steps=6 format=3 uid="uid://d0aux3vcernsy"]
 
 [ext_resource type="PackedScene" uid="uid://sp7alm62p0p4" path="res://props/interactable_base.tscn" id="1_vy0ac"]
 [ext_resource type="Script" path="res://props/note.gd" id="2_3ute3"]
 [ext_resource type="PackedScene" uid="uid://bx8ynk5s4s4ii" path="res://ui/page.tscn" id="2_6vbe1"]
+[ext_resource type="Texture2D" uid="uid://dcwbqwdpw5cj3" path="res://textures/paper.png" id="4_accb7"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_222sx"]
+radius = 24.0208
 
 [node name="Note" instance=ExtResource("1_vy0ac")]
 script = ExtResource("2_3ute3")
-text = "asdf"
+text = "Hi"
 interface = ExtResource("2_6vbe1")
+
+[node name="Sprite2D" parent="." index="0"]
+scale = Vector2(2, 2)
+texture = ExtResource("4_accb7")
+
+[node name="CollisionShape2D" parent="Area2D" index="0"]
+shape = SubResource("CircleShape2D_222sx")
 
 [editable path="Area2D"]

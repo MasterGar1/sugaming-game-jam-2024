@@ -19,11 +19,11 @@ position = Vector2(690, -342)
 
 [node name="Light" parent="." instance=ExtResource("1_43rkd")]
 y_sort_enabled = true
-position = Vector2(496.667, 361.333)
+position = Vector2(689.667, 363)
 
 [node name="Generator" parent="." instance=ExtResource("2_uy15c")]
 y_sort_enabled = true
-position = Vector2(-750, 361.333)
+position = Vector2(-557, 363)
 
 [node name="Player" parent="." instance=ExtResource("4_81e4c")]
 position = Vector2(-615, -399)
