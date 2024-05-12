@@ -1,7 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://vmqp3pnghove"]
+[gd_scene load_steps=10 format=3 uid="uid://vmqp3pnghove"]
 
 [ext_resource type="PackedScene" uid="uid://wrgudla24vtw" path="res://rooms/light_room.tscn" id="1_43rkd"]
 [ext_resource type="PackedScene" uid="uid://rnv0bt4r1ybf" path="res://rooms/start_room.tscn" id="1_b31em"]
+[ext_resource type="Texture2D" uid="uid://1cakyyiv87po" path="res://textures/stars.jpg" id="1_sd4a6"]
 [ext_resource type="PackedScene" uid="uid://bmj44ib1cms00" path="res://rooms/generator_room.tscn" id="2_uy15c"]
 [ext_resource type="PackedScene" uid="uid://pgh2bkkgyha4" path="res://rooms/chest_room.tscn" id="3_rpxgm"]
 [ext_resource type="PackedScene" uid="uid://d3267n1v2qtf3" path="res://player/player.tscn" id="4_81e4c"]
@@ -10,6 +11,14 @@
 [ext_resource type="Script" path="res://utility/exit_door.gd" id="8_xffdw"]
 
 [node name="World" type="Node2D"]
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_left = -1736.0
+offset_top = -1132.0
+offset_right = 1986.0
+offset_bottom = 1382.0
+texture = ExtResource("1_sd4a6")
+stretch_mode = 1
 
 [node name="Start" parent="." instance=ExtResource("1_b31em")]
 position = Vector2(-526.332, -278.998)
