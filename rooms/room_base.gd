@@ -12,8 +12,9 @@ func _ready():
 	SceneManager.connect("switch_room", transition_to)
 
 func complete(index):
-	is_completed = true
-	unlockable_door.unlock(0)
+	if index == room_id:
+		is_completed = true
+		unlockable_door.unlock(index)
 	
 func transition_to(what):
 	is_current = false

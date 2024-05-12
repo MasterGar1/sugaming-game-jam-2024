@@ -34,7 +34,7 @@ interface = ExtResource("6_eejj6")
 z_index = 1
 position = Vector2(-526, -16)
 
-[node name="Note" parent="." index="7" instance=ExtResource("7_pto4t")]
+[node name="Note" parent="." index="6" instance=ExtResource("7_pto4t")]
 position = Vector2(-261, 113)
 text = "The power has been reallocated to the generator for emergency. This makes the escape pods inaccessible... Also does anybody have an idea what this next to the locked top door is?"
 

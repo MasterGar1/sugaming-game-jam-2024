@@ -30,6 +30,7 @@ position = Vector2(689.667, 363)
 [node name="Generator" parent="." instance=ExtResource("2_uy15c")]
 y_sort_enabled = true
 position = Vector2(-557, 363)
+room_id = 0
 
 [node name="Player" parent="." instance=ExtResource("4_81e4c")]
 position = Vector2(-986, -422)
@@ -49,6 +50,8 @@ position = Vector2(-986, -422)
 [editable path="Chest/Door/Area"]
 [editable path="Chest/Moveable4"]
 [editable path="Light"]
+[editable path="Light/Door"]
+[editable path="Light/Door/Area"]
 [editable path="Light/PossessedProp"]
 [editable path="Light/PossessedProp/Area"]
 [editable path="Light/PossessedProp2"]
@@ -65,6 +68,8 @@ position = Vector2(-986, -422)
 [editable path="Light/PossessedProp7/Area"]
 [editable path="Light/PossessedProp8"]
 [editable path="Light/PossessedProp8/Area"]
+[editable path="Light/SusGlob"]
+[editable path="Light/SusGlob/Area2D"]
 [editable path="Generator"]
 [editable path="Generator/Door"]
 [editable path="Generator/Door/Area"]
