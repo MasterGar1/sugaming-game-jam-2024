@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://d0aux3vcernsy"]
 
 [ext_resource type="PackedScene" uid="uid://sp7alm62p0p4" path="res://props/interactable_base.tscn" id="1_vy0ac"]
-[ext_resource type="Script" path="res://props/note.gd" id="2_3ute3"]
+[ext_resource type="Script" path="res://objects/note.gd" id="2_3ute3"]
 [ext_resource type="PackedScene" uid="uid://bx8ynk5s4s4ii" path="res://ui/page.tscn" id="2_6vbe1"]
 [ext_resource type="Texture2D" uid="uid://dcwbqwdpw5cj3" path="res://textures/paper.png" id="4_accb7"]
 

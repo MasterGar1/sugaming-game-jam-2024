@@ -3,12 +3,12 @@
 [ext_resource type="PackedScene" uid="uid://wrgudla24vtw" path="res://rooms/light_room.tscn" id="1_43rkd"]
 [ext_resource type="PackedScene" uid="uid://rnv0bt4r1ybf" path="res://rooms/start_room.tscn" id="1_b31em"]
 [ext_resource type="Texture2D" uid="uid://1cakyyiv87po" path="res://textures/stars.jpg" id="1_sd4a6"]
-[ext_resource type="PackedScene" uid="uid://bmj44ib1cms00" path="res://rooms/generator_room.tscn" id="2_uy15c"]
+[ext_resource type="PackedScene" uid="uid://brw3terhli7hh" path="res://rooms/generator_room.tscn" id="2_uy15c"]
 [ext_resource type="PackedScene" uid="uid://pgh2bkkgyha4" path="res://rooms/chest_room.tscn" id="3_rpxgm"]
 [ext_resource type="PackedScene" uid="uid://d3267n1v2qtf3" path="res://player/player.tscn" id="4_81e4c"]
 [ext_resource type="PackedScene" uid="uid://dmae8a1qrthxn" path="res://ui/overlay.tscn" id="5_ycald"]
-[ext_resource type="PackedScene" uid="uid://cqb88s4wunyw7" path="res://props/door.tscn" id="7_424rv"]
-[ext_resource type="Script" path="res://utility/exit_door.gd" id="8_xffdw"]
+[ext_resource type="PackedScene" uid="uid://cqb88s4wunyw7" path="res://objects/door.tscn" id="7_424rv"]
+[ext_resource type="Script" path="res://objects/exit_door.gd" id="8_xffdw"]
 
 [node name="World" type="Node2D"]
 
@@ -26,6 +26,19 @@ is_current = true
 
 [node name="Camera2D" parent="Start" index="4"]
 enabled = true
+
+[node name="EscapeDoor" parent="Start" instance=ExtResource("7_424rv")]
+position = Vector2(-498.668, -138.002)
+rotation = 1.5708
+transition = -1
+
+[node name="Area" parent="Start/EscapeDoor" index="0"]
+script = ExtResource("8_xffdw")
+
+[node name="Sprite2D" parent="Start/EscapeDoor" index="1"]
+position = Vector2(2.84732, -0.676201)
+rotation = -1.57362
+scale = Vector2(2.40122, 4.79317)
 
 [node name="Chest" parent="." instance=ExtResource("3_rpxgm")]
 y_sort_enabled = true
@@ -46,26 +59,15 @@ position = Vector2(-557, 363)
 position = Vector2(-472, -310)
 
 [node name="Player" parent="." instance=ExtResource("4_81e4c")]
-position = Vector2(-854, -423)
+position = Vector2(-973, -408)
 
 [node name="Overlay" parent="Player" instance=ExtResource("5_ycald")]
-
-[node name="EscapeDoor" parent="." instance=ExtResource("7_424rv")]
-position = Vector2(-1025, -417)
-rotation = 1.5708
-transition = -1
-
-[node name="Area" parent="EscapeDoor" index="0"]
-script = ExtResource("8_xffdw")
-
-[node name="Sprite2D" parent="EscapeDoor" index="1"]
-position = Vector2(2.84732, -0.676201)
-rotation = -1.57362
-scale = Vector2(2.40122, 4.79317)
 
 [editable path="Start"]
 [editable path="Start/Door"]
 [editable path="Start/Door/Area"]
+[editable path="Start/EscapeDoor"]
+[editable path="Start/EscapeDoor/Area"]
 [editable path="Chest"]
 [editable path="Chest/PossessedProp"]
 [editable path="Chest/PossessedProp/Area"]
@@ -99,5 +101,10 @@ scale = Vector2(2.40122, 4.79317)
 [editable path="Generator"]
 [editable path="Generator/Door"]
 [editable path="Generator/Door/Area"]
-[editable path="EscapeDoor"]
-[editable path="EscapeDoor/Area"]
+[editable path="Generator/PossessedProp"]
+[editable path="Generator/PossessedProp/Area"]
+[editable path="Generator/PossessedProp2"]
+[editable path="Generator/PossessedProp2/Area"]
+[editable path="Generator/PossessedProp3"]
+[editable path="Generator/PossessedProp3/Area"]
+[editable path="Generator/Moveable"]

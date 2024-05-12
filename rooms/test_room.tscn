@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://cdqcaau7ji17p" path="res://rooms/room_base.tscn" id="1_tkqbq"]
 [ext_resource type="PackedScene" uid="uid://c1y36c81o5fqa" path="res://enemy/possessed_prop.tscn" id="2_7beop"]
 [ext_resource type="PackedScene" uid="uid://mq4fa3bw3lve" path="res://player/wrench.tscn" id="3_43rpp"]
-[ext_resource type="PackedScene" uid="uid://d0aux3vcernsy" path="res://props/note.tscn" id="4_ix7vt"]
+[ext_resource type="PackedScene" uid="uid://d0aux3vcernsy" path="res://objects/note.tscn" id="4_ix7vt"]
 [ext_resource type="Texture2D" uid="uid://d0yj1tfod2lll" path="res://textures/hp_orb.png" id="4_yy44w"]
 [ext_resource type="Texture2D" uid="uid://cearpgmphltn7" path="res://textures/beer.png" id="5_1c0fd"]
 [ext_resource type="PackedScene" uid="uid://dmae8a1qrthxn" path="res://ui/overlay.tscn" id="5_rn5oj"]

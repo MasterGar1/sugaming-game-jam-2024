@@ -5,7 +5,7 @@ extends Node2D
 @onready var sprite = $Sprite2D
 
 func _ready():
-	SceneManager.connect("completed", unlock)
+	pass
 
 func _process(delta):
 	if area.can_see_entity():

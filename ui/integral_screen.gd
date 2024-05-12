@@ -11,9 +11,6 @@ signal integral_fail()
 func _ready():
 	integral_index = get_tree().get_current_scene().find_child("Generator").integral_index
 	problemImg.texture = load("res://textures/Integrals/%s.png" % integral_index)
-	#print(get_canvas().get_parent().get_node("BonusDoor"))
-	#integral_success.connect(get_tree().get_root().find_node("BonusDoor").unlock)
-
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -22,7 +19,7 @@ func _process(delta):
 func check_answer(answer):
 	if (answers[integral_index] == answer):
 		if get_tree().get_current_scene().find_child("Generator").is_current == true:
-			get_tree().get_current_scene().find_child("Generator").complete(1)
+			get_tree().get_current_scene().find_child("Generator").complete(3)
 	else:
 		print("Incorrect!")
 		integral_fail.emit()

@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://c7ik2f85r4fnt"]
 
 [ext_resource type="PackedScene" uid="uid://sp7alm62p0p4" path="res://props/interactable_base.tscn" id="1_7rphh"]
-[ext_resource type="Script" path="res://props/Lever.gd" id="2_l76ta"]
+[ext_resource type="Script" path="res://objects/Lever.gd" id="2_l76ta"]
 [ext_resource type="Texture2D" uid="uid://byt1n4ck4qctj" path="res://textures/red_lever.png" id="3_xw1tc"]
 
 [node name="Interactable" instance=ExtResource("1_7rphh")]

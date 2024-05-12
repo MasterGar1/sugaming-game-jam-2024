@@ -1,7 +1,7 @@
 [gd_scene load_steps=15 format=3 uid="uid://wrgudla24vtw"]
 
 [ext_resource type="PackedScene" uid="uid://cdqcaau7ji17p" path="res://rooms/room_base.tscn" id="1_e5p42"]
-[ext_resource type="PackedScene" uid="uid://cqb88s4wunyw7" path="res://props/door.tscn" id="3_43urx"]
+[ext_resource type="PackedScene" uid="uid://cqb88s4wunyw7" path="res://objects/door.tscn" id="3_43urx"]
 [ext_resource type="PackedScene" uid="uid://iq0dqwo06dyt" path="res://props/light.tscn" id="4_qay73"]
 [ext_resource type="PackedScene" uid="uid://c1y36c81o5fqa" path="res://enemy/possessed_prop.tscn" id="5_k2vox"]
 [ext_resource type="Texture2D" uid="uid://iee277bntcoh" path="res://textures/movablechest.png" id="6_wojxv"]
@@ -12,7 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://g4dh0130ifob" path="res://textures/gun.png" id="11_wdos2"]
 [ext_resource type="Texture2D" uid="uid://cpn3sla3yfshd" path="res://textures/blob_fall.png" id="12_30m8g"]
 [ext_resource type="PackedScene" uid="uid://sp7alm62p0p4" path="res://props/interactable_base.tscn" id="13_shbd2"]
-[ext_resource type="Script" path="res://props/sus_glob.gd" id="14_4735w"]
+[ext_resource type="Script" path="res://objects/sus_glob.gd" id="14_4735w"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_c88ys"]
 radius = 35.6931

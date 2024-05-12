@@ -15,6 +15,7 @@ func complete(index):
 	if index == -1:
 		is_completed = true
 		get_tree().get_current_scene().find_child("EscapeDoor").unlock(index)
+		SceneManager.begin_end()
 		return
 		
 	if index == room_id:

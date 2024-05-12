@@ -1,8 +1,8 @@
 [gd_scene load_steps=6 format=3 uid="uid://rnv0bt4r1ybf"]
 
 [ext_resource type="PackedScene" uid="uid://cdqcaau7ji17p" path="res://rooms/room_base.tscn" id="1_b2xnk"]
-[ext_resource type="PackedScene" uid="uid://cqb88s4wunyw7" path="res://props/door.tscn" id="2_h53ad"]
-[ext_resource type="PackedScene" uid="uid://d0aux3vcernsy" path="res://props/note.tscn" id="3_luc0r"]
+[ext_resource type="PackedScene" uid="uid://cqb88s4wunyw7" path="res://objects/door.tscn" id="2_h53ad"]
+[ext_resource type="PackedScene" uid="uid://d0aux3vcernsy" path="res://objects/note.tscn" id="3_luc0r"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ehix6"]
 radius = 13.0

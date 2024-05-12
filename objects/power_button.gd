@@ -11,5 +11,3 @@ func _ready():
 func _process(delta):
 	if area.can_see_entity() and Input.is_action_just_pressed("interact"):
 		SceneManager.completed.emit(-1)
-		#SceneManager.completed.emit(get_parent().room_id)
-		SceneManager.begin_end()
