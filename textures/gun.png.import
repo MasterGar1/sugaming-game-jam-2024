@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cjfx0igeqvgxd"
-path="res://.godot/imported/tiles.png-fd1e809407e1b022bee2996923837492.ctex"
+uid="uid://g4dh0130ifob"
+path="res://.godot/imported/gun.png-1ec2c3171c39ad004a7bbde478d86ba6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://textures/tiles.png"
-dest_files=["res://.godot/imported/tiles.png-fd1e809407e1b022bee2996923837492.ctex"]
+source_file="res://textures/gun.png"
+dest_files=["res://.godot/imported/gun.png-1ec2c3171c39ad004a7bbde478d86ba6.ctex"]
 
 [params]
 
