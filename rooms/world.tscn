@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://vmqp3pnghove"]
+[gd_scene load_steps=9 format=3 uid="uid://vmqp3pnghove"]
 
 [ext_resource type="PackedScene" uid="uid://wrgudla24vtw" path="res://rooms/light_room.tscn" id="1_43rkd"]
 [ext_resource type="PackedScene" uid="uid://rnv0bt4r1ybf" path="res://rooms/start_room.tscn" id="1_b31em"]
@@ -6,6 +6,8 @@
 [ext_resource type="PackedScene" uid="uid://pgh2bkkgyha4" path="res://rooms/chest_room.tscn" id="3_rpxgm"]
 [ext_resource type="PackedScene" uid="uid://d3267n1v2qtf3" path="res://player/player.tscn" id="4_81e4c"]
 [ext_resource type="PackedScene" uid="uid://dmae8a1qrthxn" path="res://ui/overlay.tscn" id="5_ycald"]
+[ext_resource type="PackedScene" uid="uid://cqb88s4wunyw7" path="res://props/door.tscn" id="7_424rv"]
+[ext_resource type="Script" path="res://utility/exit_door.gd" id="8_xffdw"]
 
 [node name="World" type="Node2D"]
 
@@ -32,9 +34,22 @@ y_sort_enabled = true
 position = Vector2(-557, 363)
 
 [node name="Player" parent="." instance=ExtResource("4_81e4c")]
-position = Vector2(-986, -422)
+position = Vector2(-854, -423)
 
 [node name="Overlay" parent="Player" instance=ExtResource("5_ycald")]
+
+[node name="EscapeDoor" parent="." instance=ExtResource("7_424rv")]
+position = Vector2(-1025, -417)
+rotation = 1.5708
+transition = -1
+
+[node name="Area" parent="EscapeDoor" index="0"]
+script = ExtResource("8_xffdw")
+
+[node name="Sprite2D" parent="EscapeDoor" index="1"]
+position = Vector2(2.84732, -0.676201)
+rotation = -1.57362
+scale = Vector2(2.40122, 4.79317)
 
 [editable path="Start"]
 [editable path="Start/Door"]
@@ -49,6 +64,8 @@ position = Vector2(-986, -422)
 [editable path="Chest/Door/Area"]
 [editable path="Chest/Moveable4"]
 [editable path="Light"]
+[editable path="Light/Door"]
+[editable path="Light/Door/Area"]
 [editable path="Light/PossessedProp"]
 [editable path="Light/PossessedProp/Area"]
 [editable path="Light/PossessedProp2"]
@@ -65,6 +82,10 @@ position = Vector2(-986, -422)
 [editable path="Light/PossessedProp7/Area"]
 [editable path="Light/PossessedProp8"]
 [editable path="Light/PossessedProp8/Area"]
+[editable path="Light/SusGlob"]
+[editable path="Light/SusGlob/Area2D"]
 [editable path="Generator"]
 [editable path="Generator/Door"]
 [editable path="Generator/Door/Area"]
+[editable path="EscapeDoor"]
+[editable path="EscapeDoor/Area"]

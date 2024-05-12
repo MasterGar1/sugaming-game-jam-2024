@@ -16,6 +16,11 @@ func complete(index):
 	unlockable_door.unlock(0)
 	
 func transition_to(what):
+	if what == -1:
+		SceneManager.toggle_pause()
+		var game_over_screen : PackedScene = load("res://ui/victory_screen.tscn")
+		get_tree().get_current_scene().add_child(game_over_screen.instantiate())
+	
 	is_current = false
 	camera.enabled = false
 	
