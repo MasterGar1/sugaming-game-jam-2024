@@ -40,7 +40,6 @@ format = 2
 scale = Vector2(2, 2)
 tile_set = SubResource("TileSet_inhx0")
 format = 2
-layer_0/tile_data = PackedInt32Array(-131075, 196608, 1, -131074, 262144, 1, -131073, 327680, 1)
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(0.3, 0.3)
