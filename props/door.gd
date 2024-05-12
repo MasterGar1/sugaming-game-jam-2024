@@ -13,6 +13,7 @@ func _process(delta):
 
 func unlock():
 	$Area/CollisionShape2D.disabled = false
+	$CollisionShape2D.disabled = true
 	sprite.play("default")
 	await sprite.animation_finished
 	sprite.visible = false

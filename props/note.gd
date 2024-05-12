@@ -7,3 +7,5 @@ func _process(delta):
 		var inst = interface.instantiate()
 		get_tree().get_current_scene().add_child(inst)
 		inst.init(text)
+		if get_tree().get_current_scene().find_child("Start").is_current == true:
+			get_tree().get_current_scene().find_child("Start").complete(0)

@@ -118,6 +118,7 @@ texture = ExtResource("7_ihu0q")
 
 [node name="Door" parent="." index="10" instance=ExtResource("9_fwlqe")]
 position = Vector2(321, 78)
+transition = 2
 
 [node name="Sprite2D" parent="Door" index="1"]
 rotation = -1.5708
