@@ -1,0 +1,59 @@
+[gd_scene load_steps=4 format=3 uid="uid://dmae8a1qrthxn"]
+
+[ext_resource type="Texture2D" uid="uid://c45x2ljm4gb3b" path="res://textures/hp_orb_outline.png" id="1_1fvf6"]
+[ext_resource type="Script" path="res://ui/overlay.gd" id="1_rj4tw"]
+[ext_resource type="Texture2D" uid="uid://d0yj1tfod2lll" path="res://textures/hp_orb.png" id="2_v8xol"]
+
+[node name="Overlay" type="CanvasLayer"]
+script = ExtResource("1_rj4tw")
+
+[node name="HBox" type="HBoxContainer" parent="."]
+offset_left = 5.0
+offset_top = 4.0
+offset_right = 62.0
+offset_bottom = 20.0
+
+[node name="HP1" type="TextureRect" parent="HBox"]
+layout_mode = 2
+texture = ExtResource("1_1fvf6")
+stretch_mode = 4
+
+[node name="TextureRect" type="TextureRect" parent="HBox/HP1"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_v8xol")
+stretch_mode = 4
+
+[node name="HP2" type="TextureRect" parent="HBox"]
+layout_mode = 2
+texture = ExtResource("1_1fvf6")
+stretch_mode = 4
+
+[node name="TextureRect" type="TextureRect" parent="HBox/HP2"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_v8xol")
+stretch_mode = 4
+
+[node name="HP3" type="TextureRect" parent="HBox"]
+layout_mode = 2
+texture = ExtResource("1_1fvf6")
+stretch_mode = 4
+
+[node name="TextureRect" type="TextureRect" parent="HBox/HP3"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_v8xol")
+stretch_mode = 4

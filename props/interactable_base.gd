@@ -5,4 +5,5 @@ extends Node2D
 
 func _process(delta):
 	if area.can_see_entity() and Input.is_action_just_pressed("interact"):
-		get_tree().get_current_scene().add_child(interface.instantiate())
+		var inst = interface.instantiate()
+		get_tree().get_current_scene().add_child(inst)

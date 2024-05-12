@@ -12,6 +12,7 @@ var state : int = MOVE
 var input_direction : Vector2 = Vector2.ZERO
 
 signal death()
+signal take_damage(left)
 
 #States
 enum {
@@ -37,7 +38,6 @@ func _physics_process(delta):
 			move(delta)
 			
 		ATTACK:
-			move(delta)
 			attack(delta)
 	
 func _unhandled_input(event):
@@ -101,6 +101,7 @@ func switch_state(st : int):
 	
 func get_hit():
 	health -= 1
+	take_damage.emit(health)
 	print("you got hit!")
 	if (health <= 0):
 		death.emit()

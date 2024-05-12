@@ -84,9 +84,7 @@ shape = SubResource("RectangleShape2D_f3dlu")
 curve = SubResource("Curve2D_sade8")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
-position = Vector2(85, 0)
-rotation = 0.269167
-progress = 92.4474
+rotation = -0.96007
 
 [node name="Enemy" parent="Path2D/PathFollow2D" instance=ExtResource("2_k5ahp")]
 visible = false
