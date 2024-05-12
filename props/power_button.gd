@@ -10,6 +10,6 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	if area.can_see_entity() and Input.is_action_just_pressed("interact"):
-		sprite.texture=ResourceLoader.load("res://textures/on_red_lever.png")
+		SceneManager.completed.emit(-1)
 		#SceneManager.completed.emit(get_parent().room_id)
 		SceneManager.begin_end()

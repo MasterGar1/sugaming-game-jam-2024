@@ -12,6 +12,11 @@ func _ready():
 	SceneManager.connect("switch_room", transition_to)
 
 func complete(index):
+	if index == -1:
+		is_completed = true
+		get_tree().get_current_scene().find_child("EscapeDoor").unlock(index)
+		return
+		
 	if index == room_id:
 		is_completed = true
 		unlockable_door.unlock(index)

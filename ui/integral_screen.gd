@@ -9,7 +9,7 @@ signal integral_fail()
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	integral_index = get_tree().get_current_scene().integral_index
+	integral_index = get_tree().get_current_scene().find_child("Generator").integral_index
 	problemImg.texture = load("res://textures/Integrals/%s.png" % integral_index)
 	#print(get_canvas().get_parent().get_node("BonusDoor"))
 	#integral_success.connect(get_tree().get_root().find_node("BonusDoor").unlock)
