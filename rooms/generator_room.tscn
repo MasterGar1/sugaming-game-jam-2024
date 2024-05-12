@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://brw3terhli7hh"]
+[gd_scene load_steps=8 format=3 uid="uid://bmj44ib1cms00"]
 
 [ext_resource type="PackedScene" uid="uid://cdqcaau7ji17p" path="res://rooms/room_base.tscn" id="1_a2u5n"]
 [ext_resource type="Script" path="res://rooms/generator_room.gd" id="2_xismu"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://sp7alm62p0p4" path="res://props/interactable_base.tscn" id="5_65dh0"]
 [ext_resource type="PackedScene" uid="uid://1v16ibfgvkrn" path="res://ui/integral_screen.tscn" id="6_eejj6"]
 [ext_resource type="PackedScene" uid="uid://c6g2dact8cdm8" path="res://props/power_button.tscn" id="7_e2l0r"]
+[ext_resource type="PackedScene" uid="uid://d0aux3vcernsy" path="res://props/note.tscn" id="7_pto4t"]
 
 [node name="Room2" node_paths=PackedStringArray("unlockable_door") instance=ExtResource("1_a2u5n")]
 script = ExtResource("2_xismu")
@@ -25,13 +26,17 @@ scale = Vector2(2.39606, 4.48549)
 
 [node name="IntegralProblem" parent="." index="4" instance=ExtResource("5_65dh0")]
 z_index = 1
-position = Vector2(-462, -315)
+position = Vector2(-454, -249)
 scale = Vector2(0.58, 0.58)
 interface = ExtResource("6_eejj6")
 
 [node name="PowerButton" parent="." index="5" instance=ExtResource("7_e2l0r")]
 z_index = 1
 position = Vector2(-526, -16)
+
+[node name="Note" parent="." index="6" instance=ExtResource("7_pto4t")]
+position = Vector2(-261, 113)
+text = "The power has been reallocated to the generator for emergency. This makes the escape pods inaccessible... Also does anybody have an idea what this next to the locked top door is?"
 
 [editable path="Door"]
 [editable path="Door/Area"]

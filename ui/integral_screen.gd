@@ -5,7 +5,6 @@ extends "res://ui/canvas_base.gd"
 
 var integral_index : int
 
-signal integral_success()
 signal integral_fail()
 
 # Called when the node enters the scene tree for the first time.
@@ -22,8 +21,8 @@ func _process(delta):
 
 func check_answer(answer):
 	if (answers[integral_index] == answer):
-		print("Correct!")
-		integral_success.emit()
+		if get_tree().get_current_scene().find_child("Generator").is_current == true:
+			get_tree().get_current_scene().find_child("Generator").complete(1)
 	else:
 		print("Incorrect!")
 		integral_fail.emit()

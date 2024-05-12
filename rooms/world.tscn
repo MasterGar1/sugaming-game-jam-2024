@@ -32,6 +32,7 @@ position = Vector2(689.667, 363)
 [node name="Generator" parent="." instance=ExtResource("2_uy15c")]
 y_sort_enabled = true
 position = Vector2(-557, 363)
+room_id = 0
 
 [node name="Player" parent="." instance=ExtResource("4_81e4c")]
 position = Vector2(-854, -423)
