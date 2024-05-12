@@ -1,10 +1,13 @@
-[gd_scene load_steps=7 format=3 uid="uid://dt2a1g8ogm8ah"]
+[gd_scene load_steps=10 format=3 uid="uid://dt2a1g8ogm8ah"]
 
 [ext_resource type="PackedScene" uid="uid://cdqcaau7ji17p" path="res://rooms/room_base.tscn" id="1_tkqbq"]
 [ext_resource type="PackedScene" uid="uid://c1y36c81o5fqa" path="res://enemy/possessed_prop.tscn" id="2_7beop"]
 [ext_resource type="PackedScene" uid="uid://mq4fa3bw3lve" path="res://player/wrench.tscn" id="3_43rpp"]
 [ext_resource type="PackedScene" uid="uid://d0aux3vcernsy" path="res://props/note.tscn" id="4_ix7vt"]
+[ext_resource type="Texture2D" uid="uid://d0yj1tfod2lll" path="res://textures/hp_orb.png" id="4_yy44w"]
+[ext_resource type="Texture2D" uid="uid://cearpgmphltn7" path="res://textures/beer.png" id="5_1c0fd"]
 [ext_resource type="PackedScene" uid="uid://dmae8a1qrthxn" path="res://ui/overlay.tscn" id="5_rn5oj"]
+[ext_resource type="Texture2D" uid="uid://dcjh5r7mmq7bn" path="res://textures/lamp.png" id="6_cjuy3"]
 [ext_resource type="PackedScene" uid="uid://iq0dqwo06dyt" path="res://props/light.tscn" id="6_sltum"]
 
 [node name="Test" instance=ExtResource("1_tkqbq")]
@@ -13,13 +16,24 @@
 position = Vector2(71, -119)
 
 [node name="PossessedProp" parent="." index="4" instance=ExtResource("2_7beop")]
-position = Vector2(-290, -121)
+position = Vector2(-50, 162)
+
+[node name="Sprite2D" parent="PossessedProp" index="0"]
+position = Vector2(-3.00001, -2.5)
+scale = Vector2(3.375, 3.4375)
+texture = ExtResource("4_yy44w")
 
 [node name="PossessedProp2" parent="." index="5" instance=ExtResource("2_7beop")]
 position = Vector2(-325, 129)
 
+[node name="Sprite2D" parent="PossessedProp2" index="0"]
+texture = ExtResource("5_1c0fd")
+
 [node name="PossessedProp3" parent="." index="6" instance=ExtResource("2_7beop")]
 position = Vector2(214, 170)
+
+[node name="Sprite2D" parent="PossessedProp3" index="0"]
+texture = ExtResource("6_cjuy3")
 
 [node name="Note" parent="." index="7" instance=ExtResource("4_ix7vt")]
 position = Vector2(294, -126)
@@ -27,5 +41,12 @@ position = Vector2(294, -126)
 [node name="Overlay" parent="." index="8" instance=ExtResource("5_rn5oj")]
 
 [node name="Light" parent="." index="9" instance=ExtResource("6_sltum")]
-position = Vector2(18, 72)
+position = Vector2(811, -51)
 texture_scale = 3.38
+
+[editable path="PossessedProp"]
+[editable path="PossessedProp/Area"]
+[editable path="PossessedProp2"]
+[editable path="PossessedProp2/Area"]
+[editable path="PossessedProp3"]
+[editable path="PossessedProp3/Area"]

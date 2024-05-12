@@ -34,6 +34,7 @@ shape = SubResource("RectangleShape2D_pxs6m")
 
 [node name="Note" parent="." index="3" instance=ExtResource("3_luc0r")]
 position = Vector2(-383, -216)
+text = "Handyman Greg's notes:\\-fix lights in infirmary\\-hang up wrench in storage\\-get the 2 beers from generator room\\ -expect the unexpected"
 
 [editable path="Door"]
 [editable path="Door/Area"]
