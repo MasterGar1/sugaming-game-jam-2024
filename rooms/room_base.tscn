@@ -27,8 +27,7 @@ texture = ExtResource("5_8owrc")
 [sub_resource type="TileSet" id="TileSet_inhx0"]
 sources/0 = SubResource("TileSetAtlasSource_jmi0d")
 
-[node name="Room" type="Node2D"]
-y_sort_enabled = true
+[node name="Room2" type="Node2D"]
 material = SubResource("ShaderMaterial_1gwp3")
 script = ExtResource("1_1p8gf")
 

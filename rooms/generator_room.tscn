@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://brw3terhli7hh"]
+[gd_scene load_steps=6 format=3 uid="uid://brw3terhli7hh"]
 
 [ext_resource type="PackedScene" uid="uid://6ipdexvy306t" path="res://rooms/room_base.tscn" id="1_a2u5n"]
 [ext_resource type="Script" path="res://rooms/generator_room.gd" id="2_xismu"]
@@ -6,11 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://sp7alm62p0p4" path="res://props/interactable_base.tscn" id="5_65dh0"]
 [ext_resource type="PackedScene" uid="uid://1v16ibfgvkrn" path="res://ui/integral_screen.tscn" id="6_eejj6"]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_dwoh8"]
-radius = 13.0
-height = 58.0
-
-[node name="Room" node_paths=PackedStringArray("unlockable_door") instance=ExtResource("1_a2u5n")]
+[node name="Room2" node_paths=PackedStringArray("unlockable_door") instance=ExtResource("1_a2u5n")]
 script = ExtResource("2_xismu")
 room_id = 3
 unlockable_door = NodePath("Door")
@@ -25,10 +21,7 @@ layer_0/tile_data = PackedInt32Array(-4, 0, 0, -5, 0, 0, 65531, 0, 0, 65532, 0, 
 [node name="Door" parent="." index="3" instance=ExtResource("4_y68gl")]
 position = Vector2(-382, -308)
 
-[node name="CollisionShape2D" parent="Door/Area" index="0"]
-shape = SubResource("CapsuleShape2D_dwoh8")
-
-[node name="Sprite2D" parent="Door" index="1"]
+[node name="Sprite2D" parent="Door" index="0"]
 rotation = 1.5708
 scale = Vector2(2.39606, 4.48549)
 
@@ -39,4 +32,3 @@ scale = Vector2(0.58, 0.58)
 interface = ExtResource("6_eejj6")
 
 [editable path="Door"]
-[editable path="Door/Area"]
