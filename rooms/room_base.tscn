@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://rooms/room_base.gd" id="1_1p8gf"]
 [ext_resource type="Shader" path="res://ui/overlay.gdshader" id="1_tnayq"]
 [ext_resource type="TileSet" uid="uid://bivdxm05vxosy" path="res://rooms/tile_set.tres" id="4_l7m4d"]
-[ext_resource type="Texture2D" uid="uid://bup21yeu01qw8" path="res://textures/furniture.png" id="5_8owrc"]
+[ext_resource type="Texture2D" uid="uid://4mpoi44m0xqt" path="res://textures/furniture.png" id="5_8owrc"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_1gwp3"]
 shader = ExtResource("1_tnayq")
@@ -41,8 +41,5 @@ tile_set = SubResource("TileSet_inhx0")
 format = 2
 
 [node name="Camera2D" type="Camera2D" parent="."]
+enabled = false
 zoom = Vector2(0.3, 0.3)
-
-[node name="Blocker" type="StaticBody2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Blocker"]

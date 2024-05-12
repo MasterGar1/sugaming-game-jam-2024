@@ -11,7 +11,7 @@ func _process(delta):
 	if area.can_see_entity():
 		SceneManager.switch_room.emit(transition)
 
-func unlock():
+func unlock(index = 0):
 	$Area/CollisionShape2D.disabled = false
 	$CollisionShape2D.disabled = true
 	sprite.play("default")
