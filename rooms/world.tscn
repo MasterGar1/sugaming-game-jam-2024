@@ -1,3 +1,16 @@
-[gd_scene format=3 uid="uid://vmqp3pnghove"]
+[gd_scene load_steps=4 format=3 uid="uid://vmqp3pnghove"]
+
+[ext_resource type="PackedScene" uid="uid://wrgudla24vtw" path="res://rooms/light_room.tscn" id="1_43rkd"]
+[ext_resource type="PackedScene" uid="uid://brw3terhli7hh" path="res://rooms/generator_room.tscn" id="2_uy15c"]
+[ext_resource type="PackedScene" uid="uid://pgh2bkkgyha4" path="res://rooms/chest_room.tscn" id="3_rpxgm"]
 
 [node name="World" type="Node2D"]
+
+[node name="Light" parent="." instance=ExtResource("1_43rkd")]
+position = Vector2(496.667, 361.333)
+
+[node name="Generator" parent="." instance=ExtResource("2_uy15c")]
+position = Vector2(-750, 361.333)
+
+[node name="Chest" parent="." instance=ExtResource("3_rpxgm")]
+position = Vector2(690, -342)

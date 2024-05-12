@@ -7,7 +7,6 @@ var integral_index : int
 func _ready():
 	integral_index = rng.randi_range(1, 7)
 
-
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	pass

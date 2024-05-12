@@ -1,11 +1,28 @@
-[gd_scene load_steps=5 format=3 uid="uid://6ipdexvy306t"]
+[gd_scene load_steps=9 format=3 uid="uid://6ipdexvy306t"]
 
 [ext_resource type="Script" path="res://rooms/room_base.gd" id="1_1p8gf"]
 [ext_resource type="PackedScene" uid="uid://d3267n1v2qtf3" path="res://player/player.tscn" id="1_85fp7"]
 [ext_resource type="Shader" path="res://ui/overlay.gdshader" id="1_tnayq"]
+[ext_resource type="TileSet" uid="uid://bivdxm05vxosy" path="res://rooms/tile_set.tres" id="4_l7m4d"]
+[ext_resource type="Texture2D" uid="uid://bup21yeu01qw8" path="res://textures/furniture.png" id="5_8owrc"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_1gwp3"]
 shader = ExtResource("1_tnayq")
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jmi0d"]
+texture = ExtResource("5_8owrc")
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+5:0/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+5:1/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_inhx0"]
+sources/0 = SubResource("TileSetAtlasSource_jmi0d")
 
 [node name="Room" type="Node2D"]
 y_sort_enabled = true
@@ -15,7 +32,15 @@ script = ExtResource("1_1p8gf")
 [node name="Player" parent="." instance=ExtResource("1_85fp7")]
 
 [node name="TileMap" type="TileMap" parent="."]
+scale = Vector2(2, 2)
+tile_set = ExtResource("4_l7m4d")
 format = 2
+
+[node name="TileMap2" type="TileMap" parent="."]
+scale = Vector2(2, 2)
+tile_set = SubResource("TileSet_inhx0")
+format = 2
+layer_0/tile_data = PackedInt32Array(-131075, 196608, 1, -131074, 262144, 1, -131073, 327680, 1)
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(0.3, 0.3)
