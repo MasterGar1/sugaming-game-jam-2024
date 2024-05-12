@@ -5,10 +5,15 @@ extends "res://ui/canvas_base.gd"
 
 var integral_index : int
 
+signal integral_success()
+signal integral_fail()
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	integral_index = get_tree().get_current_scene().integral_index
 	problemImg.texture = load("res://textures/Integrals/%s.png" % integral_index)
+	#print(get_canvas().get_parent().get_node("BonusDoor"))
+	#integral_success.connect(get_tree().get_root().find_node("BonusDoor").unlock)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -16,14 +21,16 @@ func _process(delta):
 	pass
 
 func check_answer(answer):
-	print("asdf")
 	if (answers[integral_index] == answer):
 		print("Correct!")
+		integral_success.emit()
 	else:
-		print("Nope!")
+		print("Incorrect!")
+		integral_fail.emit()
+		
+	_close()
 
 func _on_button_0_button_up():
-	print("aaa")
 	check_answer(0)
 
 func _on_button_1_button_up():
