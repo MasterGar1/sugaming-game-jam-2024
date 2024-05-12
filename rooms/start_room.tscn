@@ -20,6 +20,7 @@ layer_0/tile_data = PackedInt32Array(393202, 0, 0, 458738, 0, 0, 524274, 0, 0, 5
 [node name="Door" parent="." index="2" instance=ExtResource("2_h53ad")]
 position = Vector2(560, -132)
 rotation = -1.5708
+transition = 1
 
 [node name="CollisionShape2D" parent="Door/Area" index="0"]
 shape = SubResource("CapsuleShape2D_ehix6")
