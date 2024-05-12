@@ -1,4 +1,4 @@
-extends Node2D
+extends "res://rooms/room_base.gd"
 
 var rng = RandomNumberGenerator.new()
 var integral_index : int

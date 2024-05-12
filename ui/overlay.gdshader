@@ -1,7 +1,11 @@
 shader_type canvas_item;
-uniform sampler2D SCREEN_TEXTURE : hint_screen_texture, filter_linear_mipmap;
+uniform float alpha = 1.0;
+uniform float inner_radius = 0.0;
+uniform float outer_radius = 1.0;
 
 void fragment() {
-	vec4 input = texture(SCREEN_TEXTURE, SCREEN_UV);
-	COLOR = vec4(input.r * 0.5, input.g * 0.5, input.b * 0.5, input.a);
+	float x = abs(UV.r - 0.5)*2.0;
+	float y = abs(UV.g - 0.5)*2.0;
+	float q = (1.0 - sqrt(x*x + y*y) / outer_radius) / (1.0 - inner_radius);
+	COLOR = vec4(0, 0, 0, q*alpha);
 }

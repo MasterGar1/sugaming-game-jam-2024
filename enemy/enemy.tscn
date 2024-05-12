@@ -1,7 +1,8 @@
-[gd_scene load_steps=12 format=3 uid="uid://b7q4pp6eaugr8"]
+[gd_scene load_steps=14 format=3 uid="uid://b7q4pp6eaugr8"]
 
 [ext_resource type="Script" path="res://enemy/enemy.gd" id="1_a0hdj"]
 [ext_resource type="Texture2D" uid="uid://23cskm553gc3" path="res://textures/blobit.png" id="2_uj8gw"]
+[ext_resource type="Texture2D" uid="uid://cpn3sla3yfshd" path="res://textures/blob_fall.png" id="3_0iok0"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0f5qe"]
 atlas = ExtResource("2_uj8gw")
@@ -31,6 +32,10 @@ region = Rect2(80, 0, 16, 16)
 atlas = ExtResource("2_uj8gw")
 region = Rect2(96, 0, 16, 16)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_4tn4q"]
+atlas = ExtResource("3_0iok0")
+region = Rect2(0, 0, 16, 16)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_xkhqx"]
 animations = [{
 "frames": [{
@@ -58,6 +63,14 @@ animations = [{
 "loop": false,
 "name": &"attack",
 "speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4tn4q")
+}],
+"loop": true,
+"name": &"splatter",
+"speed": 5.0
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_3divo"]
@@ -71,7 +84,7 @@ script = ExtResource("1_a0hdj")
 [node name="Sprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_xkhqx")
-animation = &"attack"
+animation = &"splatter"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_3divo")

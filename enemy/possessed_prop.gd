@@ -28,6 +28,7 @@ func _animation_finished(anim_name):
 		$CollisionShape2D.disabled = false
 		if enemy != null:
 			enemy.state = enemy.STATIC
+			enemy.sprite.play("splatter")
 
 func _on_enemy_player_hit():
 	player.get_hit()

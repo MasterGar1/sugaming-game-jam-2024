@@ -1,7 +1,12 @@
-[gd_scene load_steps=13 format=3 uid="uid://cqb88s4wunyw7"]
+[gd_scene load_steps=12 format=3 uid="uid://cqb88s4wunyw7"]
 
 [ext_resource type="Script" path="res://props/door.gd" id="1_u00dr"]
 [ext_resource type="Texture2D" uid="uid://d0e4orkehifdw" path="res://textures/door_Sheet.png" id="2_3i5qt"]
+[ext_resource type="PackedScene" uid="uid://1urkjifa64tn" path="res://utility/interaction_area.tscn" id="2_uj7xu"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_5crh7"]
+radius = 13.0
+height = 58.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_rrp2a"]
 atlas = ExtResource("2_3i5qt")
@@ -41,94 +46,10 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_xv3ae")
 }],
-"loop": true,
+"loop": false,
 "name": &"default",
 "speed": 5.0
 }]
-
-[sub_resource type="Animation" id="Animation_7o13u"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(0, 0)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("../CollisionShape2D:disabled")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath(".:visible")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-
-[sub_resource type="Animation" id="Animation_rvgh0"]
-resource_name = "door_slide"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(3.13834, 1),
-"update": 0,
-"values": [Vector2(0, 0), Vector2(0, 100)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("../CollisionShape2D:disabled")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(1),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath(".:visible")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [true, false]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_1bq6h"]
-_data = {
-"RESET": SubResource("Animation_7o13u"),
-"door_slide": SubResource("Animation_rvgh0")
-}
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ck4cd"]
 size = Vector2(72, 39)
@@ -138,17 +59,22 @@ z_index = 1
 collision_mask = 2
 script = ExtResource("1_u00dr")
 
+[node name="Area" parent="." instance=ExtResource("2_uj7xu")]
+
+[node name="CollisionShape2D" parent="Area" index="0"]
+rotation = -1.57079
+shape = SubResource("CapsuleShape2D_5crh7")
+disabled = true
+debug_color = Color(0, 0.550461, 0.922403, 0.42)
+
 [node name="Sprite2D" type="AnimatedSprite2D" parent="."]
 visibility_layer = 4
 scale = Vector2(0.235352, 0.289063)
 sprite_frames = SubResource("SpriteFrames_oh8qw")
 frame_progress = 0.515593
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite2D"]
-libraries = {
-"": SubResource("AnimationLibrary_1bq6h")
-}
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_ck4cd")
 disabled = true
+
+[editable path="Area"]

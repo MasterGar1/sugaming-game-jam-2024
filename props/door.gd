@@ -1,8 +1,18 @@
 extends Node2D
 
+@export var transition : int = 0
 @onready var area = $Area
-# Called when the node enters the scene tree for the first time.
+@onready var sprite = $Sprite2D
+
+func _ready():
+	SceneManager.connect("completed", unlock)
+
+func _process(delta):
+	if area.can_see_entity():
+		SceneManager.switch_room.emit(transition)
 
 func unlock():
-	$Sprite2D.play("default")
-	$Sprite2D/AnimationPlayer.play("door_slide")
+	$Area/CollisionShape2D.disabled = false
+	sprite.play("default")
+	await sprite.animation_finished
+	sprite.visible = false

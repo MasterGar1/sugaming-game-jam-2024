@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://wpy2sraittvn"
-path="res://.godot/imported/blob_fall.png-eb411caaa9baf70b3ae4b2ecfd6b4a39.ctex"
+uid="uid://cpn3sla3yfshd"
+path="res://.godot/imported/blob_fall.png-85c227ef16883854f77e1bf15cf2960d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://blob_fall.png"
-dest_files=["res://.godot/imported/blob_fall.png-eb411caaa9baf70b3ae4b2ecfd6b4a39.ctex"]
+source_file="res://textures/blob_fall.png"
+dest_files=["res://.godot/imported/blob_fall.png-85c227ef16883854f77e1bf15cf2960d.ctex"]
 
 [params]
 
