@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://pgh2bkkgyha4"]
+[gd_scene load_steps=10 format=3 uid="uid://pgh2bkkgyha4"]
 
 [ext_resource type="PackedScene" uid="uid://cdqcaau7ji17p" path="res://rooms/room_base.tscn" id="1_qghpe"]
 [ext_resource type="PackedScene" uid="uid://c1y36c81o5fqa" path="res://enemy/possessed_prop.tscn" id="4_jry75"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://g4dh0130ifob" path="res://textures/gun.png" id="5_o5yrp"]
 [ext_resource type="PackedScene" uid="uid://dfkmxyiwyyncb" path="res://props/moveable_base.tscn" id="6_0lrll"]
 [ext_resource type="Texture2D" uid="uid://iee277bntcoh" path="res://textures/movablechest.png" id="7_ihu0q"]
+[ext_resource type="PackedScene" uid="uid://mq4fa3bw3lve" path="res://player/wrench.tscn" id="8_gntji"]
 [ext_resource type="PackedScene" uid="uid://cqb88s4wunyw7" path="res://props/door.tscn" id="9_fwlqe"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pcti5"]
@@ -69,7 +70,7 @@ position = Vector2(-305, -80)
 texture = ExtResource("7_ihu0q")
 
 [node name="Moveable3" parent="." index="9" instance=ExtResource("6_0lrll")]
-position = Vector2(-209, -144)
+position = Vector2(-209, -177)
 
 [node name="Sprite2D" parent="Moveable3" index="0"]
 texture = ExtResource("7_ihu0q")
@@ -90,6 +91,9 @@ position = Vector2(-304, -176)
 
 [node name="Sprite2D" parent="Moveable4" index="0"]
 texture = ExtResource("7_ihu0q")
+
+[node name="Wrench" parent="." index="12" instance=ExtResource("8_gntji")]
+position = Vector2(-179, -31)
 
 [editable path="PossessedProp"]
 [editable path="PossessedProp/Area"]
