@@ -69,6 +69,7 @@ _data = {
 }
 
 [node name="PossessedProp" type="StaticBody2D"]
+collision_mask = 3
 script = ExtResource("1_g3nrt")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

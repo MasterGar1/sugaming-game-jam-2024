@@ -1,7 +1,7 @@
 extends CanvasLayer
 
 func _ready():
-	get_parent().find_child("Player").connect("take_damage", change_hp)
+	get_tree().get_current_scene().find_child("Player").connect("take_damage", change_hp)
 
 func change_hp(left : int):
 	match left:

@@ -1,7 +1,6 @@
-[gd_scene load_steps=9 format=3 uid="uid://6ipdexvy306t"]
+[gd_scene load_steps=8 format=3 uid="uid://cdqcaau7ji17p"]
 
 [ext_resource type="Script" path="res://rooms/room_base.gd" id="1_1p8gf"]
-[ext_resource type="PackedScene" uid="uid://d3267n1v2qtf3" path="res://player/player.tscn" id="1_85fp7"]
 [ext_resource type="Shader" path="res://ui/overlay.gdshader" id="1_tnayq"]
 [ext_resource type="TileSet" uid="uid://bivdxm05vxosy" path="res://rooms/tile_set.tres" id="4_l7m4d"]
 [ext_resource type="Texture2D" uid="uid://bup21yeu01qw8" path="res://textures/furniture.png" id="5_8owrc"]
@@ -27,11 +26,9 @@ texture = ExtResource("5_8owrc")
 [sub_resource type="TileSet" id="TileSet_inhx0"]
 sources/0 = SubResource("TileSetAtlasSource_jmi0d")
 
-[node name="Room2" type="Node2D"]
+[node name="Room" type="Node2D"]
 material = SubResource("ShaderMaterial_1gwp3")
 script = ExtResource("1_1p8gf")
-
-[node name="Player" parent="." instance=ExtResource("1_85fp7")]
 
 [node name="TileMap" type="TileMap" parent="."]
 scale = Vector2(2, 2)

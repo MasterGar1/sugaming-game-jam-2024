@@ -1,16 +1,31 @@
-[gd_scene load_steps=4 format=3 uid="uid://vmqp3pnghove"]
+[gd_scene load_steps=7 format=3 uid="uid://vmqp3pnghove"]
 
 [ext_resource type="PackedScene" uid="uid://wrgudla24vtw" path="res://rooms/light_room.tscn" id="1_43rkd"]
+[ext_resource type="PackedScene" uid="uid://rnv0bt4r1ybf" path="res://rooms/start_room.tscn" id="1_b31em"]
 [ext_resource type="PackedScene" uid="uid://brw3terhli7hh" path="res://rooms/generator_room.tscn" id="2_uy15c"]
 [ext_resource type="PackedScene" uid="uid://pgh2bkkgyha4" path="res://rooms/chest_room.tscn" id="3_rpxgm"]
+[ext_resource type="PackedScene" uid="uid://d3267n1v2qtf3" path="res://player/player.tscn" id="4_81e4c"]
+[ext_resource type="PackedScene" uid="uid://dmae8a1qrthxn" path="res://ui/overlay.tscn" id="5_ycald"]
 
 [node name="World" type="Node2D"]
 
+[node name="Start" parent="." instance=ExtResource("1_b31em")]
+position = Vector2(-526.332, -278.998)
+is_current = true
+
+[node name="Chest" parent="." instance=ExtResource("3_rpxgm")]
+y_sort_enabled = true
+position = Vector2(690, -342)
+
 [node name="Light" parent="." instance=ExtResource("1_43rkd")]
+y_sort_enabled = true
 position = Vector2(496.667, 361.333)
 
 [node name="Generator" parent="." instance=ExtResource("2_uy15c")]
+y_sort_enabled = true
 position = Vector2(-750, 361.333)
 
-[node name="Chest" parent="." instance=ExtResource("3_rpxgm")]
-position = Vector2(690, -342)
+[node name="Player" parent="." instance=ExtResource("4_81e4c")]
+position = Vector2(-615, -399)
+
+[node name="Overlay" parent="Player" instance=ExtResource("5_ycald")]

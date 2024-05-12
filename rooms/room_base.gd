@@ -8,6 +8,8 @@ var is_completed : bool = false
 
 func _ready():
 	camera.enabled = is_current
+	SceneManager.connect("completed", complete)
 
-func complete():
+func complete(index):
+	is_completed = true
 	unlockable_door.unlock()
