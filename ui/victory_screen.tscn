@@ -1,0 +1,33 @@
+[gd_scene load_steps=4 format=3 uid="uid://clofobqkbeuk7"]
+
+[ext_resource type="PackedScene" uid="uid://blj2wft0li0q" path="res://ui/canvas_base.tscn" id="1_a48q5"]
+[ext_resource type="Texture2D" uid="uid://1cakyyiv87po" path="res://textures/stars.jpg" id="2_jmo7g"]
+[ext_resource type="FontFile" uid="uid://chtgj4c1mrnvg" path="res://BLOODY.TTF" id="3_3kuen"]
+
+[node name="VictoryScreen" instance=ExtResource("1_a48q5")]
+
+[node name="Button" parent="." index="0"]
+offset_top = 246.0
+offset_bottom = 277.0
+
+[node name="TextureRect" type="TextureRect" parent="." index="1"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -24.0
+offset_bottom = 24.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_jmo7g")
+stretch_mode = 1
+
+[node name="Label" type="Label" parent="." index="2"]
+offset_left = 51.0
+offset_top = 25.0
+offset_right = 314.0
+offset_bottom = 170.0
+theme_override_fonts/font = ExtResource("3_3kuen")
+theme_override_font_sizes/font_size = 64
+text = "You
+escaped!"
+horizontal_alignment = 1
