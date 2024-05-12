@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bup21yeu01qw8"
-path="res://.godot/imported/furniture.png-09accc93629d9ced2daea3dbe6e0ed54.ctex"
+uid="uid://byt1n4ck4qctj"
+path="res://.godot/imported/red_lever.png-0e06df39d7ab06ccdbab5f013e7f0b30.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://textures/furniture.png"
-dest_files=["res://.godot/imported/furniture.png-09accc93629d9ced2daea3dbe6e0ed54.ctex"]
+source_file="res://textures/red_lever.png"
+dest_files=["res://.godot/imported/red_lever.png-0e06df39d7ab06ccdbab5f013e7f0b30.ctex"]
 
 [params]
 
