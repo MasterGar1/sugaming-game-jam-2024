@@ -38,6 +38,8 @@ func _physics_process(delta):
 			move(delta)
 			
 		ATTACK:
+			if input_direction != Vector2.ZERO:
+				move(delta)
 			attack(delta)
 	
 func _unhandled_input(event):
