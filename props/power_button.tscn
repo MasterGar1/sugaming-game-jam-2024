@@ -1,0 +1,14 @@
+[gd_scene load_steps=4 format=3 uid="uid://c6g2dact8cdm8"]
+
+[ext_resource type="PackedScene" uid="uid://sp7alm62p0p4" path="res://props/interactable_base.tscn" id="1_n1lwq"]
+[ext_resource type="Texture2D" uid="uid://byt1n4ck4qctj" path="res://textures/red_lever.png" id="2_8fnvq"]
+[ext_resource type="Script" path="res://props/power_button.gd" id="2_q2clo"]
+
+[node name="PowerButton" instance=ExtResource("1_n1lwq")]
+script = ExtResource("2_q2clo")
+interface = null
+
+[node name="Sprite2D" parent="." index="0"]
+texture = ExtResource("2_8fnvq")
+
+[editable path="Area2D"]

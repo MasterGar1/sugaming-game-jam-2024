@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://brw3terhli7hh"]
+[gd_scene load_steps=7 format=3 uid="uid://brw3terhli7hh"]
 
 [ext_resource type="PackedScene" uid="uid://cdqcaau7ji17p" path="res://rooms/room_base.tscn" id="1_a2u5n"]
 [ext_resource type="Script" path="res://rooms/generator_room.gd" id="2_xismu"]
 [ext_resource type="PackedScene" uid="uid://cqb88s4wunyw7" path="res://props/door.tscn" id="4_y68gl"]
 [ext_resource type="PackedScene" uid="uid://sp7alm62p0p4" path="res://props/interactable_base.tscn" id="5_65dh0"]
 [ext_resource type="PackedScene" uid="uid://1v16ibfgvkrn" path="res://ui/integral_screen.tscn" id="6_eejj6"]
+[ext_resource type="PackedScene" uid="uid://c6g2dact8cdm8" path="res://props/power_button.tscn" id="7_e2l0r"]
 
 [node name="Room2" node_paths=PackedStringArray("unlockable_door") instance=ExtResource("1_a2u5n")]
 script = ExtResource("2_xismu")
@@ -27,6 +28,10 @@ z_index = 1
 position = Vector2(-454, -249)
 scale = Vector2(0.58, 0.58)
 interface = ExtResource("6_eejj6")
+
+[node name="PowerButton" parent="." index="5" instance=ExtResource("7_e2l0r")]
+z_index = 1
+position = Vector2(-526, -16)
 
 [editable path="Door"]
 [editable path="Door/Area"]
