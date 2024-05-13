@@ -1,9 +1,10 @@
-[gd_scene load_steps=15 format=3 uid="uid://brw3terhli7hh"]
+[gd_scene load_steps=19 format=3 uid="uid://brw3terhli7hh"]
 
 [ext_resource type="PackedScene" uid="uid://cdqcaau7ji17p" path="res://rooms/room_base.tscn" id="1_a2u5n"]
 [ext_resource type="Script" path="res://rooms/generator_room.gd" id="2_xismu"]
 [ext_resource type="PackedScene" uid="uid://cqb88s4wunyw7" path="res://objects/door.tscn" id="4_y68gl"]
 [ext_resource type="PackedScene" uid="uid://sp7alm62p0p4" path="res://props/interactable_base.tscn" id="5_65dh0"]
+[ext_resource type="Texture2D" uid="uid://bdi8w5borp8mb" path="res://textures/pc_sheet.png" id="6_cdmj2"]
 [ext_resource type="PackedScene" uid="uid://1v16ibfgvkrn" path="res://ui/integral_screen.tscn" id="6_eejj6"]
 [ext_resource type="PackedScene" uid="uid://c6g2dact8cdm8" path="res://objects/power_button.tscn" id="7_e2l0r"]
 [ext_resource type="PackedScene" uid="uid://d0aux3vcernsy" path="res://objects/note.tscn" id="7_pto4t"]
@@ -14,6 +15,28 @@
 [ext_resource type="PackedScene" uid="uid://dfkmxyiwyyncb" path="res://props/moveable_base.tscn" id="12_4tdvf"]
 [ext_resource type="Texture2D" uid="uid://iee277bntcoh" path="res://textures/movablechest.png" id="13_lttb5"]
 [ext_resource type="PackedScene" uid="uid://iq0dqwo06dyt" path="res://props/light.tscn" id="14_mpuf0"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wnwda"]
+atlas = ExtResource("6_cdmj2")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vlklr"]
+atlas = ExtResource("6_cdmj2")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3nbh7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wnwda")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vlklr")
+}],
+"loop": true,
+"name": &"default",
+"speed": 3.0
+}]
 
 [node name="Room2" node_paths=PackedStringArray("unlockable_door") instance=ExtResource("1_a2u5n")]
 script = ExtResource("2_xismu")
@@ -37,9 +60,19 @@ scale = Vector2(2.39606, 4.48549)
 
 [node name="IntegralProblem" parent="." index="4" instance=ExtResource("5_65dh0")]
 z_index = 1
-position = Vector2(-454, -249)
+position = Vector2(-300, -317)
 scale = Vector2(0.58, 0.58)
 interface = ExtResource("6_eejj6")
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" parent="IntegralProblem" index="0"]
+visible = false
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="IntegralProblem" index="2"]
+scale = Vector2(4, 4)
+sprite_frames = SubResource("SpriteFrames_3nbh7")
+autoplay = "default"
+frame_progress = 0.258061
 
 [node name="PowerButton" parent="." index="5" instance=ExtResource("7_e2l0r")]
 z_index = 1
@@ -85,6 +118,8 @@ position = Vector2(431, -166)
 
 [editable path="Door"]
 [editable path="Door/Area"]
+[editable path="IntegralProblem"]
+[editable path="IntegralProblem/Area2D"]
 [editable path="PossessedProp"]
 [editable path="PossessedProp/Area"]
 [editable path="PossessedProp2"]
