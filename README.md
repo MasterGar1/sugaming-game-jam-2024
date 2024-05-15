@@ -1,2 +1,2 @@
-# sugaming-game-jam-2024
-A game by "The Sitters"
+# Desastra
+A game by "The Sitters" for the SUGAMING Game jam 2024
