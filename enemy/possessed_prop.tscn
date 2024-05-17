@@ -6,11 +6,11 @@
 [ext_resource type="PackedScene" uid="uid://1urkjifa64tn" path="res://utility/interaction_area.tscn" id="3_g86lm"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_f3dlu"]
-size = Vector2(68, 80)
+size = Vector2(69, 80)
 
 [sub_resource type="Curve2D" id="Curve2D_sade8"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 7, -10, 0, 0, 0, 0, 21, -14, 0, 0, 0, 0, 40, -12, 0, 0, 0, 0, 56, -8, 0, 0, 0, 0, 85, 0)
+"points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 9, -9, 0, 0, 0, 0, 21, -14, 0, 0, 0, 0, 40, -12, 0, 0, 0, 0, 56, -8, 0, 0, 0, 0, 85, 0)
 }
 point_count = 6
 
@@ -86,7 +86,7 @@ shape = SubResource("RectangleShape2D_f3dlu")
 curve = SubResource("Curve2D_sade8")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
-rotation = -0.96007
+rotation = -0.785398
 
 [node name="Enemy" parent="Path2D/PathFollow2D" instance=ExtResource("2_k5ahp")]
 visible = false

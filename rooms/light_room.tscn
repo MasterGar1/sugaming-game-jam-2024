@@ -40,7 +40,7 @@ scale = Vector2(2.48536, 4.48906)
 position = Vector2(-73, -229)
 
 [node name="Light2" parent="." index="5" instance=ExtResource("4_qay73")]
-position = Vector2(192, -207)
+position = Vector2(192, -150)
 
 [node name="Light3" parent="." index="6" instance=ExtResource("4_qay73")]
 position = Vector2(-291, -219)
@@ -126,6 +126,32 @@ texture = ExtResource("12_30m8g")
 [node name="CollisionShape2D" parent="SusGlob/Area2D" index="0"]
 shape = SubResource("CircleShape2D_c88ys")
 
+[node name="Interactable" parent="." index="19" instance=ExtResource("13_shbd2")]
+position = Vector2(105, -313)
+
+[node name="Sprite2D" parent="Interactable" index="0"]
+position = Vector2(28, 7)
+scale = Vector2(1.6775, 1.8025)
+
+[node name="CollisionShape2D" parent="Interactable/Area2D" index="0"]
+position = Vector2(25, 5)
+
+[node name="Interactable2" parent="." index="20" instance=ExtResource("13_shbd2")]
+z_index = 1
+position = Vector2(-124, -307)
+
+[node name="Interactable3" parent="." index="21" instance=ExtResource("13_shbd2")]
+position = Vector2(-327, -307)
+
+[node name="Interactable4" parent="." index="22" instance=ExtResource("13_shbd2")]
+position = Vector2(239, 91)
+
+[node name="Interactable5" parent="." index="23" instance=ExtResource("13_shbd2")]
+position = Vector2(-304, 165)
+
+[node name="Interactable6" parent="." index="24" instance=ExtResource("13_shbd2")]
+position = Vector2(4, 172)
+
 [editable path="Door"]
 [editable path="Door/Area"]
 [editable path="PossessedProp"]
@@ -146,3 +172,5 @@ shape = SubResource("CircleShape2D_c88ys")
 [editable path="PossessedProp8/Area"]
 [editable path="SusGlob"]
 [editable path="SusGlob/Area2D"]
+[editable path="Interactable"]
+[editable path="Interactable/Area2D"]

@@ -6,7 +6,7 @@
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_fruum"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1p1gg"]
-size = Vector2(100, 100)
+size = Vector2(116, 96)
 
 [node name="Moveable" type="RigidBody2D"]
 z_index = 1
@@ -21,6 +21,6 @@ scale = Vector2(1.5, 1.5)
 texture = ExtResource("1_c4u40")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0.5, 0.5)
+position = Vector2(-3.5, 0.5)
 scale = Vector2(0.25, 0.25)
 shape = SubResource("RectangleShape2D_1p1gg")

@@ -69,6 +69,9 @@ position = Vector2(-305, -80)
 [node name="Sprite2D" parent="Moveable2" index="0"]
 texture = ExtResource("7_ihu0q")
 
+[node name="CollisionShape2D" parent="Moveable2" index="1"]
+position = Vector2(0.5, -2)
+
 [node name="Moveable3" parent="." index="9" instance=ExtResource("6_0lrll")]
 position = Vector2(-209, -177)
 
