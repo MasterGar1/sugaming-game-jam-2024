@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://dt2a1g8ogm8ah"]
+[gd_scene load_steps=11 format=3 uid="uid://dt2a1g8ogm8ah"]
 
 [ext_resource type="PackedScene" uid="uid://cdqcaau7ji17p" path="res://rooms/room_base.tscn" id="1_tkqbq"]
 [ext_resource type="PackedScene" uid="uid://c1y36c81o5fqa" path="res://enemy/possessed_prop.tscn" id="2_7beop"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://dmae8a1qrthxn" path="res://ui/overlay.tscn" id="5_rn5oj"]
 [ext_resource type="Texture2D" uid="uid://dcjh5r7mmq7bn" path="res://textures/lamp.png" id="6_cjuy3"]
 [ext_resource type="PackedScene" uid="uid://iq0dqwo06dyt" path="res://props/light.tscn" id="6_sltum"]
+[ext_resource type="PackedScene" uid="uid://d26d3kpiesjct" path="res://props/computer.tscn" id="10_ekgyl"]
 
 [node name="Test" instance=ExtResource("1_tkqbq")]
 
@@ -43,6 +44,9 @@ position = Vector2(294, -126)
 [node name="Light" parent="." index="9" instance=ExtResource("6_sltum")]
 position = Vector2(811, -51)
 texture_scale = 3.38
+
+[node name="Interactable" parent="." index="10" instance=ExtResource("10_ekgyl")]
+position = Vector2(-303, 51)
 
 [editable path="PossessedProp"]
 [editable path="PossessedProp/Area"]

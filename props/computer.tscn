@@ -1,0 +1,57 @@
+[gd_scene load_steps=6 format=3 uid="uid://d26d3kpiesjct"]
+
+[ext_resource type="PackedScene" uid="uid://sp7alm62p0p4" path="res://props/interactable_base.tscn" id="1_x4bup"]
+[ext_resource type="Script" path="res://computer.gd" id="2_84lqe"]
+
+[sub_resource type="Animation" id="Animation_lblup"]
+resource_name = "input"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [0, 1]
+}
+
+[sub_resource type="Animation" id="Animation_l323u"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_csys1"]
+_data = {
+"RESET": SubResource("Animation_l323u"),
+"input": SubResource("Animation_lblup")
+}
+
+[node name="Interactable" instance=ExtResource("1_x4bup")]
+script = ExtResource("2_84lqe")
+interface = null
+
+[node name="Sprite2D" parent="." index="0"]
+scale = Vector2(2, 2.02875)
+
+[node name="CollisionShape2D" parent="Area2D" index="0"]
+position = Vector2(1, 0)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="2"]
+libraries = {
+"": SubResource("AnimationLibrary_csys1")
+}
+
+[editable path="Area2D"]

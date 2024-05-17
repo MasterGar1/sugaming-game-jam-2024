@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://wrgudla24vtw"]
+[gd_scene load_steps=16 format=3 uid="uid://wrgudla24vtw"]
 
 [ext_resource type="PackedScene" uid="uid://cdqcaau7ji17p" path="res://rooms/room_base.tscn" id="1_e5p42"]
 [ext_resource type="PackedScene" uid="uid://cqb88s4wunyw7" path="res://props/door.tscn" id="3_43urx"]
@@ -13,6 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://cpn3sla3yfshd" path="res://textures/blob_fall.png" id="12_30m8g"]
 [ext_resource type="PackedScene" uid="uid://sp7alm62p0p4" path="res://props/interactable_base.tscn" id="13_shbd2"]
 [ext_resource type="Script" path="res://props/sus_glob.gd" id="14_4735w"]
+[ext_resource type="PackedScene" uid="uid://d26d3kpiesjct" path="res://props/computer.tscn" id="14_qv22t"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_c88ys"]
 radius = 35.6931
@@ -80,15 +81,19 @@ texture = ExtResource("7_ojuj5")
 position = Vector2(-2.5, 1.5)
 
 [node name="PossessedProp4" parent="." index="13" instance=ExtResource("5_k2vox")]
-position = Vector2(-175, -336)
+position = Vector2(-321, -302)
 
 [node name="Sprite2D" parent="PossessedProp4" index="0"]
 position = Vector2(16.5, 1)
 scale = Vector2(2.03125, 2)
 texture = ExtResource("8_kn81b")
+hframes = 2
 
 [node name="CollisionShape2D" parent="PossessedProp4" index="1"]
 position = Vector2(16, 0.5)
+
+[node name="CollisionShape2D" parent="PossessedProp4/Area" index="0"]
+position = Vector2(12, 2)
 
 [node name="PossessedProp5" parent="." index="14" instance=ExtResource("5_k2vox")]
 position = Vector2(-27, 158)
@@ -126,31 +131,23 @@ texture = ExtResource("12_30m8g")
 [node name="CollisionShape2D" parent="SusGlob/Area2D" index="0"]
 shape = SubResource("CircleShape2D_c88ys")
 
-[node name="Interactable" parent="." index="19" instance=ExtResource("13_shbd2")]
-position = Vector2(105, -313)
+[node name="Interactable" parent="." index="19" instance=ExtResource("14_qv22t")]
+position = Vector2(-238, -301)
 
-[node name="Sprite2D" parent="Interactable" index="0"]
-position = Vector2(28, 7)
-scale = Vector2(1.6775, 1.8025)
+[node name="Interactable2" parent="." index="20" instance=ExtResource("14_qv22t")]
+position = Vector2(-15, -304)
 
-[node name="CollisionShape2D" parent="Interactable/Area2D" index="0"]
-position = Vector2(25, 5)
+[node name="Interactable3" parent="." index="21" instance=ExtResource("14_qv22t")]
+position = Vector2(207, -304)
 
-[node name="Interactable2" parent="." index="20" instance=ExtResource("13_shbd2")]
-z_index = 1
-position = Vector2(-124, -307)
+[node name="Interactable4" parent="." index="22" instance=ExtResource("14_qv22t")]
+position = Vector2(239, 239)
 
-[node name="Interactable3" parent="." index="21" instance=ExtResource("13_shbd2")]
-position = Vector2(-327, -307)
+[node name="Interactable5" parent="." index="23" instance=ExtResource("14_qv22t")]
+position = Vector2(-48, 241)
 
-[node name="Interactable4" parent="." index="22" instance=ExtResource("13_shbd2")]
-position = Vector2(239, 91)
-
-[node name="Interactable5" parent="." index="23" instance=ExtResource("13_shbd2")]
-position = Vector2(-304, 165)
-
-[node name="Interactable6" parent="." index="24" instance=ExtResource("13_shbd2")]
-position = Vector2(4, 172)
+[node name="Interactable6" parent="." index="24" instance=ExtResource("14_qv22t")]
+position = Vector2(-272, 239)
 
 [editable path="Door"]
 [editable path="Door/Area"]
@@ -172,5 +169,3 @@ position = Vector2(4, 172)
 [editable path="PossessedProp8/Area"]
 [editable path="SusGlob"]
 [editable path="SusGlob/Area2D"]
-[editable path="Interactable"]
-[editable path="Interactable/Area2D"]
